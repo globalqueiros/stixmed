@@ -1,0 +1,22 @@
+.navbar {
+    background-color: #06786f;
+    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    position: relative;
+    z-index: 50;
+    border-radius: 0 0 14px 14px;
+}
+
+.navbar.fixed {
+    background-color: #06786f;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+@media (min-width: 1200px){
+    .navbar{
+        font-size: 30px !important;
+    }
+}

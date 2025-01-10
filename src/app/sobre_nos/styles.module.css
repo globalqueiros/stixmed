@@ -1,0 +1,176 @@
+.paragrafo {
+    font-size: 2.15vh;
+    padding-bottom: 0.6vh;
+    text-align: justify;
+    line-height: 2.5vh;
+}
+
+.cardsContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    background: #25a096;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 0px;
+    text-align: left;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.cardImage {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.cardTitle {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.cardDescription {
+    font-size: 14px;
+    color: #666;
+}
+
+.title {
+    font-size: 1.5rem;
+    line-height: 1.2;
+    font-weight: 600;
+    text-align: center;
+    word-wrap: break-word;
+    white-space: normal;
+}
+
+.break {
+    display: inline-block;
+    word-break: break-word;
+}
+
+
+@media (max-width: 575.98px) {
+    .button {
+        display: inline-block;
+        padding: 1vh 4vh;
+        font-size: 14px;
+        text-align: center;
+        text-decoration: none;
+        background-color: #25a096;
+        color: white;
+        border-radius: 28px;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    
+    .button:hover {
+        color: #25a096;
+        background-color: transparent;
+        border: 01px solid #25a096;
+        padding: 1.3vh 5vh;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .button {
+        display: inline-block;
+        padding: 1vh 4vh;
+        font-size: 14px;
+        text-align: center;
+        text-decoration: none;
+        background-color: #25a096;
+        color: white;
+        border-radius: 28px;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    
+    .button:hover {
+        color: #25a096;
+        background-color: transparent;
+        border: 01px solid #25a096;
+        padding: 1.3vh 5vh;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .button {
+        display: inline-block;
+        padding: 1vh 4vh;
+        font-size: 14px;
+        text-align: center;
+        text-decoration: none;
+        background-color: #25a096;
+        color: white;
+        border-radius: 28px;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    
+    .button:hover {
+        color: #25a096;
+        background-color: transparent;
+        border: 01px solid #25a096;
+        padding: 1.3vh 5vh;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .button {
+        display: inline-block;
+        padding: 1.3vh 5vh;
+        font-size: 16px;
+        text-align: center;
+        text-decoration: none;
+        background-color: #25a096;
+        color: white;
+        border-radius: 28px;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    
+    .button:hover {
+        color: #25a096;
+        background-color: transparent;
+        border: 01px solid #25a096;
+        padding: 1.3vh 5vh;
+    }
+}
+
+@media (min-width: 1200px) {
+    .button {
+        display: inline-block;
+        padding: 1vh 4vh;
+        font-size: 14px;
+        text-align: center;
+        text-decoration: none;
+        background-color: #25a096;
+        color: white;
+        border-radius: 28px;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    
+    .button:hover {
+        color: #25a096;
+        background-color: transparent;
+        border: 01px solid #25a096;
+        padding: 1.3vh 5vh;
+    }
+}

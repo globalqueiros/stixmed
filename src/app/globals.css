@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #fff;
+  --foreground: #fff;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #fff;
+    --foreground: #fff;
+  }
+}
+
+body {
+  color: black;
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+hr {
+  border: 01px solid #ccc;
+  padding: 2vh;
+}
+
+a {
+  font-size: 14px;
+  color: white;
+}
+
+a:hover {
+  color: #25a096;
+}
+
+small {
+  font-size: 12px;
+}
+
+p {
+  color: black;
+}
+
+strong {
+  color: black;
+}
+
+h1 {
+  font-size: 36px;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+h4 {
+  font-size: 18px;
+}
+
+h5 {
+  font-size: 16px;
+}
+
+h6 {
+  font-size: 14px;
+}
+
+.plan-details {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+@media (max-width: 768px) {
+  .plan-details {
+    padding: 1rem;
+  }
+}
+
+label {
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 1ch !important;
+}
+
+input[name] {
+  font-size: 15px;
+}
