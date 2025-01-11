@@ -15,28 +15,29 @@ const CadastroForm = () => {
   });
 
   const [message, setMessage] = useState('');
+  const [alertType, setAlertType] = useState<string>('');
   const [isRecaptchaVerified, setIsRecaptchaVerified] = useState(false);
   const [isNoIndicacao, setIsNoIndicacao] = useState(false);
 
   const isValidCPF = (cpf: string) => {
     cpf = cpf.replace(/[^\d]/g, '');
     if (cpf.length !== 11 || /^(\d)\1+$/.test(cpf)) return false;
-  
+
     let soma = 0;
     for (let i = 0; i < 9; i++) soma += Number(cpf[i]) * (10 - i);
     let resto = (soma * 10) % 11;
     if (resto === 10 || resto === 11) resto = 0;
     if (resto !== Number(cpf[9])) return false;
-  
+
     soma = 0;
     for (let i = 0; i < 10; i++) soma += Number(cpf[i]) * (11 - i);
     resto = (soma * 10) % 11;
     if (resto === 10 || resto === 11) resto = 0;
     return resto === Number(cpf[10]);
-  }; 
+  };
 
   const handleCpfChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    let input = event.target.value.replace(/\D/g, ''); 
+    let input = event.target.value.replace(/\D/g, '');
     if (input.length > 11) input = input.slice(0, 11);
     const formattedCpf = input
       .replace(/(\d{3})(\d)/, '$1.$2')
@@ -85,11 +86,13 @@ const CadastroForm = () => {
     e.preventDefault();
     if (!isRecaptchaVerified) {
       setMessage('Por favor, verifique o ReCAPTCHA.');
+      setAlertType('danger');
       return;
     }
 
     if (!isValidCPF(formData.cpf)) {
       setMessage('CPF inválido.');
+      setAlertType('danger');
       return;
     }
 
@@ -102,6 +105,7 @@ const CadastroForm = () => {
 
       const result = await response.json();
       setMessage(result.message);
+      setAlertType(result.success ? 'success' : 'danger');
 
       if (result.success) {
         setFormData({
@@ -118,6 +122,7 @@ const CadastroForm = () => {
     } catch (error) {
       console.error(error);
       setMessage('Erro ao enviar o formulário.');
+      setAlertType('danger');
     }
   };
 
@@ -130,7 +135,7 @@ const CadastroForm = () => {
       <div className="mt-3">
         {message && (
           <div
-            className={`alert text-sm p-3 ${message === 'Por favor, verifique o ReCAPTCHA.' ? 'alert-red' : 'alert-success'}`}
+            className={`alert text-sm p-3 ${alertType === 'danger' ? 'alert-red' : 'alert-success'}`}
           >
             {message}
           </div>
