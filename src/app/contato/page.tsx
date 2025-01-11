@@ -1,7 +1,6 @@
 'use client';
 import { useState } from 'react';
 import Link from 'next/link';
-import style from './styles.module.css';
 import Image from 'next/image';
 import ReCAPTCHA from 'react-google-recaptcha';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
