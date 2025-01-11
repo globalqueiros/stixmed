@@ -10,10 +10,13 @@ const CadastroForm = () => {
     cpf: '',
     whatsapp: '',
     plano: '',
+    indicacao: '',
     endereco: '',
   });
 
+  const [isNoIndicacao, setIsNoIndicacao] = useState(false);
   const [message, setMessage] = useState('');
+  const [alertType, setAlertType] = useState<'success' | 'danger' | ''>('');
   const [isRecaptchaVerified, setIsRecaptchaVerified] = useState(false);
 
   const isValidCPF = (cpf: string) => {
@@ -33,7 +36,7 @@ const CadastroForm = () => {
     return resto === Number(cpf[10]);
   };
 
-  const handleCpfChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
+  const handleCpfChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     let input = event.target.value.replace(/\D/g, '');
     if (input.length > 11) input = input.slice(0, 11);
 
@@ -64,6 +67,15 @@ const CadastroForm = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  const handleIndicacaoChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setIsNoIndicacao(e.target.checked);
+    if (e.target.checked) {
+      setFormData({ ...formData, indicacao: 'Sem indicação' });
+    } else {
+      setFormData({ ...formData, indicacao: '' });
+    }
+  };
+
   const handleRecaptchaChange = (value: string | null) => {
     setIsRecaptchaVerified(!!value);
   };
@@ -72,6 +84,7 @@ const CadastroForm = () => {
     e.preventDefault();
     if (!isRecaptchaVerified) {
       setMessage('Por favor, verifique o ReCAPTCHA.');
+      setAlertType('danger');
       return;
     }
 
@@ -84,6 +97,7 @@ const CadastroForm = () => {
 
       const result = await response.json();
       setMessage(result.message);
+      setAlertType(result.success ? 'success' : 'danger');
 
       if (result.success) {
         setFormData({
@@ -93,12 +107,15 @@ const CadastroForm = () => {
           cpf: '',
           whatsapp: '',
           plano: '',
+          indicacao: '',
           endereco: '',
         });
+        setIsNoIndicacao(false);
       }
     } catch (error) {
       console.error(error);
       setMessage('Erro ao enviar o formulário.');
+      setAlertType('danger');
     }
   };
 
@@ -110,9 +127,7 @@ const CadastroForm = () => {
       </p>
       <div className="mt-3">
         {message && (
-          <div
-            className={`alert text-sm p-3 ${message === 'Por favor, verifique o ReCAPTCHA.' ? 'alert-red' : 'alert-success'}`}
-          >
+          <div className={`alert rounder-full alert-${alertType}`} role="alert">
             {message}
           </div>
         )}
@@ -126,8 +141,8 @@ const CadastroForm = () => {
               name="nome"
               value={formData.nome}
               onChange={handleChange}
-              placeholder="Digite seu nome completo..."
-              className="w-full border rounded-2xl px-4 py-2 capitalize text-base"
+              placeholder="Nome completo..."
+              className="w-full border rounded-2xl px-4 py-2 capitalize text-sm"
               required
             />
           </div>
@@ -138,7 +153,7 @@ const CadastroForm = () => {
               name="data_nascimento"
               value={formData.data_nascimento}
               onChange={handleChange}
-              className="w-full border rounded-2xl px-4 py-2 text-base"
+              className="w-full border rounded-2xl px-4 py-2 text-sm"
               required
             />
           </div>
@@ -150,7 +165,7 @@ const CadastroForm = () => {
               value={formData.cpf}
               onChange={handleCpfChange}
               required
-              className="w-full border rounded-2xl px-4 py-2 text-base"
+              className="w-full border rounded-2xl px-4 py-2 text-sm"
               placeholder="123.456.789-09"
             />
           </div>
@@ -164,18 +179,18 @@ const CadastroForm = () => {
               value={formData.whatsapp}
               onChange={handleWhatsappChange}
               placeholder="(00) 00000-0000"
-              className="w-full border rounded-2xl px-4 py-2 text-base"
+              className="w-full border rounded-2xl px-4 py-2 text-sm"
               required
             />
           </div>
           <div>
-            <label>E-mail *</label>
+            <label>Email *</label>
             <input
               type="email"
               name="email"
               value={formData.email}
               onChange={handleChange}
-              className="w-full border rounded-2xl px-4 py-2 text-base"
+              className="w-full border rounded-2xl px-4 py-2 text-sm"
               placeholder="seuemail@gmail.com"
               required
             />
@@ -186,7 +201,7 @@ const CadastroForm = () => {
               name="plano"
               value={formData.plano}
               onChange={handleChange}
-              className="w-full border rounded-2xl px-4 py-2 cursor-pointer text-base"
+              className="w-full border rounded-2xl px-4 py-2 cursor-pointer text-sm"
               required
             >
               <option value="">Selecione</option>
@@ -196,20 +211,47 @@ const CadastroForm = () => {
             </select>
           </div>
         </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div>
+            <label>Indicação *</label>
+            <input
+              type="text"
+              name="indicacao"
+              value={isNoIndicacao ? '' : formData.indicacao}
+              onChange={handleChange}
+              placeholder="Indicado por..."
+              className="w-full border rounded-2xl px-4 py-2 capitalize text-sm"
+              disabled={isNoIndicacao}
+              required={!isNoIndicacao}
+            />
+            <div className="flex items-center mt-0">
+              <input
+                type="checkbox"
+                id="indicacao"
+                checked={isNoIndicacao}
+                onChange={handleIndicacaoChange}
+                className="mr-2 cursor-pointer"
+              />
+              <label htmlFor="indicacao" className="ms-2 mt-2 text-sm cursor-pointer">
+                Não tem indicação
+              </label>
+            </div>
+          </div>
+        </div>
         <div>
           <label>Endereço Atendimento *</label>
           <input
             name="endereco"
             value={formData.endereco}
             onChange={handleChange}
-            className="w-full border rounded-2xl px-4 py-2 text-base"
+            className="w-full border rounded-2xl px-4 py-2 text-sm"
             placeholder="Rua Cel Jose Eusebio, N° 95, CS 13, Higienópolis, São Paulo - SP"
             required
           />
         </div>
         <div className="mt-4">
           <ReCAPTCHA
-            sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ''}
+            sitekey='6LeOxZwqAAAAABqDVmyHKfo-uaIeQY1YGntVRbCb'
             onChange={handleRecaptchaChange}
           />
         </div>

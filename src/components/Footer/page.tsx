@@ -2,6 +2,7 @@ import style from './styles.module.css';
 import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInstagram } from '@fortawesome/free-brands-svg-icons';
+import Link from 'next/link';
 
 export default function Footer() {
     const currentYear = new Date().getFullYear();
@@ -11,17 +12,17 @@ export default function Footer() {
             <div className="bg-white-50 h-1/2 w-full flex md:flex-row flex-col justify-around items-start py-0" style={{ background: '#06786f' }}>
                 <div className="py-4 pl-3 sm:pl-0">
                     <ul>
-                        <a href='/'>
+                        <Link href='/'>
                             <Image
                                 src="/logo_branco.png"
                                 width={200}
                                 height={200}
                                 alt="Logo Stixmed"
                             />
-                        </a>
+                        </Link>
                         <div className="flex flex-col items-center justify-center pt-3 pb-0" style={{ paddingBottom: '.5vh' }}>
                             <p className="text-center text-lg font-normal text-white md:text-sm">Siga nossas redes sociais</p>
-                            <a href="https://www.instagram.com/stixmed_saude/" target='_blank' className="my-2">
+                            <Link href="https://www.instagram.com/stixmed_saude/" target='_blank' className="my-2">
                                 <FontAwesomeIcon
                                     icon={faInstagram}
                                     style={{
@@ -30,25 +31,25 @@ export default function Footer() {
                                         cursor: 'pointer',
                                     }}
                                 />
-                            </a>
+                            </Link>
                         </div>
                     </ul>
                 </div>
                 <div className="py-4 pb-1 pl-3 sm:pl-0">
                     <ul>
                         <h5 className='text-white font-bold' style={{ paddingBottom: '.5vh', fontSize: '1.2rem' }}>Link Uteis</h5>
-                        <li className={style.link}><a href='/sobre_nos'>Sobre Nós</a></li>
-                        <li className={style.link}><a href='/telemedicina'>Telemedicina</a></li>
-                        <li className={style.link}><a href='/cartao_stixmed'>Cartão Stixmed</a></li>
-                        <li className={style.link}><a href='/home_care'>Home Care</a></li>
+                        <li className={style.link}><Link href='/sobre_nos'>Sobre Nós</Link></li>
+                        <li className={style.link}><Link href='/telemedicina'>Telemedicina</Link></li>
+                        <li className={style.link}><Link href='/cartao_stixmed'>Cartão Stixmed</Link></li>
+                        <li className={style.link}><Link href='/home_care'>Home Care</Link></li>
                     </ul>
                 </div>
                 <div className="py-4 pb-1 pl-3 sm:pl-0">
                     <ul>
                         <h5 className='text-white font-bold' style={{ paddingBottom: '.5vh', fontSize: '1.2rem' }}>Stixmed</h5>
-                        <li className={style.link}><a href='/contato'>Contato</a></li>
-                        <li className={style.link}><a href='https://paciente.stixmed.med.br/negociacao'>Portal de Negociação</a></li>
-                        <li className={style.link}><a href='https://career.groupqueiros.com/'>Trabalhe Conosco</a></li>
+                        <li className={style.link}><Link href='/contato'>Contato</Link></li>
+                        <li className={style.link}><Link href='https://paciente.stixmed.med.br/negociacao'>Portal de Negociação</Link></li>
+                        <li className={style.link}><Link href='https://career.groupqueiros.com/'>Trabalhe Conosco</Link></li>
                     </ul>
                 </div>
             </div>
@@ -64,7 +65,7 @@ export default function Footer() {
                 <p className="text-center" style={{ color: 'black', fontSize: '12px !important', fontWeight: '500' }}>
                     &copy; {currentYear} Stixmed Assistencia Domiciliar LTDA. Todos os
                     direitos reservados | Uma empresa{" "}
-                    <a
+                    <Link
                         href="https://groupqueiros.com/brazil"
                         target="_blank"
                         rel="noopener noreferrer"
@@ -76,7 +77,7 @@ export default function Footer() {
                             width={135}
                             height={50}
                         />
-                    </a>
+                    </Link>
                 </p>
             </div>
         </>

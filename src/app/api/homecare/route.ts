@@ -30,24 +30,59 @@ function generateRandomNumber(): string {
 
 export async function POST(req: Request) {
     try {
-        const { nome, data_nascimento, email, cpf, plano, endereco, whatsapp } = await req.json();
+        const {
+            nome,
+            data_nascimento,
+            email,
+            cpf,
+            plano,
+            endereco,
+            whatsapp,
+            indicacao,
+        } = await req.json();
+
+        if (!nome || !data_nascimento || !email || !cpf || !plano || !endereco || !whatsapp) {
+            return NextResponse.json(
+                { success: false, message: 'Todos os campos obrigatórios devem ser preenchidos.' },
+                { status: 400 }
+            );
+        }
+
+        // Validações específicas
+        if (!isValidCPF(cpf)) {
+            return NextResponse.json(
+                { success: false, message: 'CPF inválido.' },
+                { status: 400 }
+            );
+        }
+
+        if (!isValidWhatsApp(whatsapp)) {
+            return NextResponse.json(
+                { success: false, message: 'Número de WhatsApp inválido. Use o formato (XX) XXXXX-XXXX.' },
+                { status: 400 }
+            );
+        }
 
         const prontuario = generateRandomNumber();
         const query = `
-            INSERT INTO precadastro (servico, prontuario, nome, data_nascimento, email, cpf, plano, endereco, whatsapp, created) 
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            INSERT INTO precadastro (indicacao, servico, prontuario, nome, data_nascimento, email, cpf, plano, endereco, whatsapp, created
+            ) 
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         `;
+
         const now = new Date();
         now.setHours(now.getHours() - 3);
         const created = now.toISOString().slice(0, 19).replace('T', ' ');
-        const servico = '0';
-        const values = [servico, prontuario, nome, data_nascimento, email, cpf, plano, endereco, whatsapp, created];
+
+        const servico = '1';
+        const values = [indicacao, servico, prontuario, nome, data_nascimento, email, cpf, plano, endereco, whatsapp || null, created,
+        ];
 
         await db.query(query, values);
 
         return NextResponse.json({
             success: true,
-            message: 'Pré-cadastro realizado com sucesso! Aguarde nosso contato.'
+            message: 'Pré-cadastro realizado com sucesso! Aguarde nosso contato.',
         });
     } catch (error) {
         console.error(error);

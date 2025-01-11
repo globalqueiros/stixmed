@@ -30,18 +30,30 @@ function generateRandomNumber(): string {
 
 export async function POST(req: Request) {
     try {
-        const { nome, data_nascimento, email, cpf, plano, endereco, whatsapp } = await req.json();
+        const { indicacao, nome, data_nascimento, email, cpf, plano, endereco, whatsapp } = await req.json();
 
         const prontuario = generateRandomNumber();
         const query = `
-            INSERT INTO precadastro (servico, prontuario, nome, data_nascimento, email, cpf, plano, endereco, whatsapp, created) 
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            INSERT INTO precadastro (indicacao, servico, prontuario, nome, data_nascimento, email, cpf, plano, endereco, whatsapp, created) 
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         `;
         const now = new Date();
         now.setHours(now.getHours() - 3);
         const created = now.toISOString().slice(0, 19).replace('T', ' ');
         const servico = '0';
-        const values = [servico, prontuario, nome, data_nascimento, email, cpf, plano, endereco, whatsapp, created];
+        const values = [
+            indicacao || null, // Define como null caso não exista
+            servico,
+            prontuario,
+            nome,
+            data_nascimento,
+            email,
+            cpf,
+            plano,
+            endereco,
+            whatsapp,
+            created
+        ];
 
         await db.query(query, values);
 

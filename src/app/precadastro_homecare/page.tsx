@@ -1,4 +1,5 @@
 'use client';
+
 import { useState } from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
 
@@ -11,10 +12,12 @@ const CadastroForm = () => {
     whatsapp: '',
     plano: '',
     endereco: '',
+    indicacao: '',
   });
 
   const [message, setMessage] = useState('');
   const [isRecaptchaVerified, setIsRecaptchaVerified] = useState(false);
+  const [isNoIndicacao, setIsNoIndicacao] = useState(false);
 
   const isValidCPF = (cpf: string) => {
     cpf = cpf.replace(/[^\d]/g, '');
@@ -48,9 +51,9 @@ const CadastroForm = () => {
     let value = e.target.value.replace(/\D/g, '');
     if (value.length <= 2) {
       value = `(${value}`;
-    } else if (value.length <= 3) {
+    } else if (value.length <= 6) {
       value = `(${value.slice(0, 2)}) ${value.slice(2)}`;
-    } else if (value.length <= 8) {
+    } else if (value.length <= 10) {
       value = `(${value.slice(0, 2)}) ${value.slice(2, 7)}-${value.slice(7)}`;
     } else {
       value = `(${value.slice(0, 2)}) ${value.slice(2, 7)}-${value.slice(7, 11)}`;
@@ -68,10 +71,20 @@ const CadastroForm = () => {
     setIsRecaptchaVerified(!!value);
   };
 
+  const handleIndicacaoChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setIsNoIndicacao(e.target.checked);
+    setFormData({ ...formData, indicacao: e.target.checked ? 'Sem indicação' : '' });
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!isRecaptchaVerified) {
       setMessage('Por favor, verifique o ReCAPTCHA.');
+      return;
+    }
+
+    if (!isValidCPF(formData.cpf)) {
+      setMessage('CPF inválido.');
       return;
     }
 
@@ -94,6 +107,7 @@ const CadastroForm = () => {
           whatsapp: '',
           plano: '',
           endereco: '',
+          indicacao: '',
         });
       }
     } catch (error) {
@@ -127,7 +141,7 @@ const CadastroForm = () => {
               value={formData.nome}
               onChange={handleChange}
               placeholder="Digite seu nome completo..."
-              className="w-full border rounded-2xl px-4 py-2 capitalize text-base"
+              className="w-full border rounded-2xl px-4 py-2 capitalize text-sm"
               required
             />
           </div>
@@ -138,7 +152,7 @@ const CadastroForm = () => {
               name="data_nascimento"
               value={formData.data_nascimento}
               onChange={handleChange}
-              className="w-full border rounded-2xl px-4 py-2 text-base"
+              className="w-full border rounded-2xl px-4 py-2 text-sm"
               required
             />
           </div>
@@ -150,7 +164,7 @@ const CadastroForm = () => {
               value={formData.cpf}
               onChange={handleCpfChange}
               required
-              className="w-full border rounded-2xl px-4 py-2 text-base"
+              className="w-full border rounded-2xl px-4 py-2 text-sm"
               placeholder="123.456.789-09"
             />
           </div>
@@ -164,7 +178,7 @@ const CadastroForm = () => {
               value={formData.whatsapp}
               onChange={handleWhatsappChange}
               placeholder="(00) 00000-0000"
-              className="w-full border rounded-2xl px-4 py-2 text-base"
+              className="w-full border rounded-2xl px-4 py-2 text-sm"
               required
             />
           </div>
@@ -175,7 +189,7 @@ const CadastroForm = () => {
               name="email"
               value={formData.email}
               onChange={handleChange}
-              className="w-full border rounded-2xl px-4 py-2 text-base"
+              className="w-full border rounded-2xl px-4 py-2 text-sm"
               placeholder="seuemail@gmail.com"
               required
             />
@@ -186,7 +200,7 @@ const CadastroForm = () => {
               name="plano"
               value={formData.plano}
               onChange={handleChange}
-              className="w-full border rounded-2xl px-4 py-2 cursor-pointer text-base"
+              className="w-full border rounded-2xl px-4 py-2 cursor-pointer text-sm"
               required
             >
               <option value="">Selecione</option>
@@ -196,20 +210,47 @@ const CadastroForm = () => {
             </select>
           </div>
         </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div>
+            <label>Indicação *</label>
+            <input
+              type="text"
+              name="indicacao"
+              value={isNoIndicacao ? '' : formData.indicacao}
+              onChange={handleChange}
+              placeholder="Indicado por..."
+              className="w-full border rounded-2xl px-4 py-2 capitalize text-sm"
+              disabled={isNoIndicacao}
+              required={!isNoIndicacao}
+            />
+            <div className="flex items-center mt-0">
+              <input
+                type="checkbox"
+                id="indicacao"
+                checked={isNoIndicacao}
+                onChange={handleIndicacaoChange}
+                className="mr-2 cursor-pointer"
+              />
+              <label htmlFor="indicacao" className="ms-2 mt-2 text-sm cursor-pointer">
+                Não tem indicação
+              </label>
+            </div>
+          </div>
+        </div>
         <div>
           <label>Endereço Atendimento *</label>
           <input
             name="endereco"
             value={formData.endereco}
             onChange={handleChange}
-            className="w-full border rounded-2xl px-4 py-2 text-base"
+            className="w-full border rounded-2xl px-4 py-2 text-sm"
             placeholder="Rua Cel Jose Eusebio, N° 95, CS 13, Higienópolis, São Paulo - SP"
             required
           />
         </div>
         <div className="mt-4">
           <ReCAPTCHA
-            sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ''}
+            sitekey='6LeOxZwqAAAAABqDVmyHKfo-uaIeQY1YGntVRbCb'
             onChange={handleRecaptchaChange}
           />
         </div>
