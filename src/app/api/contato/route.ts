@@ -9,7 +9,7 @@ interface EmailData {
   mensagem: string;
 }
 
-async function enviarEmail({ nome, whatsapp, cpf, motivo, mensagem, email }: EmailData) {
+export async function enviarEmail({ nome, whatsapp, cpf, motivo, mensagem, email }: EmailData) {
   const user = process.env.SMTP_USER;
   const pass = process.env.SMTP_PASS;
   const host = process.env.SMTP_HOST;
