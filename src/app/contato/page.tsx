@@ -100,15 +100,15 @@ export default function Contato() {
                         alt="Mulher de Call Center"
                         className="rounded-2xl"
                     />
-                    <div className="py-3 space-y-3">
-                        <h3 className='text-lg font-semibold'>Telefones de Urgência e Emergência</h3>
+                    <div className="py-3 space-y-2">
+                        <h3 className='text-base font-semibold'>Telefones de Urgência e Emergência</h3>
                         <h5 className='text-base'>
-                            <Link href="tel:+08000000000" className='text-black text-base'>
+                            <Link href="tel:+08000000000" className='text-black text-sm'>
                                 <FontAwesomeIcon icon={faPhone} /> 0800 000 0000
                             </Link>
                         </h5>
                         <h5 className='text-base'>
-                            <Link href="https://wa.me/5511000000000" target='_blank' className='text-black text-base'>
+                            <Link href="https://wa.me/5511000000000" target='_blank' className='text-black text-sm'>
                                 <FontAwesomeIcon icon={faWhatsapp} /> (11) 00000-0000
                             </Link>
                         </h5>
@@ -213,12 +213,12 @@ export default function Contato() {
                             <input
                                 type="submit"
                                 value="Enviar"
-                                className="bg-[#10c4b5] text-white font-semibold rounded-full px-5 py-2"
+                                className="bg-[#10c4b5] text-white font-semibold rounded-full px-5 py-1.5 text-sm"
                             />
                             <input
                                 type="reset"
                                 value="Limpar"
-                                className="bg-red-500 text-white font-semibold rounded-full px-5 py-2"
+                                className="bg-red-500 text-white font-semibold rounded-full px-5 py-1.5 text-sm"
                             />
                         </div>
                     </form>
