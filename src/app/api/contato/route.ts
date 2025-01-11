@@ -10,9 +10,9 @@ interface EmailData {
 }
 
 export async function enviarEmail({ nome, whatsapp, cpf, motivo, mensagem, email }: EmailData) {
-  const user = process.env.SMTP_USER;
-  const pass = process.env.SMTP_PASS;
-  const host = process.env.SMTP_HOST;
+  const user = 'contato@stixmed.med.br';
+  const pass = 'xl6H@uO6vubb';
+  const host = 'sg2plzcpnl503747.prod.sin2.secureserver.net';
 
   if (!user || !pass || !host) {
     console.error('As variáveis de ambiente não estão configuradas corretamente.');
