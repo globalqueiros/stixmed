@@ -135,7 +135,7 @@ const CadastroForm = () => {
       <div className="mt-3">
         {message && (
           <div
-            className={`alert text-sm p-3 ${alertType === 'danger' ? 'alert-red' : 'alert-success'}`}
+            className={`alert rounded-full text-sm p-3 ${alertType === 'danger' ? 'alert-red' : 'alert-success'}`}
           >
             {message}
           </div>
