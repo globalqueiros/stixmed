@@ -15,15 +15,10 @@ const CadastroForm = () => {
   });
 
   const [message, setMessage] = useState('');
+  const [alertType, setAlertType] = useState('');
   const [isRecaptchaVerified, setIsRecaptchaVerified] = useState(false);
   const [isNoIndicacao, setIsNoIndicacao] = useState(false);
 
-  // Função fictícia para ilustrar o uso de setAlertType (se necessário)
-  const setAlertType = (type: string) => {
-    console.log(`Tipo de alerta definido: ${type}`);
-  };
-
-  // Validações
   const isValidCPF = (cpf: string) => {
     cpf = cpf.replace(/[^\d]/g, '');
     if (cpf.length !== 11 || /^(\d)\1+$/.test(cpf)) return false;
@@ -196,7 +191,7 @@ const CadastroForm = () => {
             />
           </div>
           <div>
-            <label>E-mail *</label>
+            <label>Email *</label>
             <input
               type="email"
               name="email"
@@ -276,7 +271,3 @@ const CadastroForm = () => {
 };
 
 export default CadastroForm;
-
-function setAlertType(arg0: string) {
-  throw new Error('Function not implemented.');
-}
