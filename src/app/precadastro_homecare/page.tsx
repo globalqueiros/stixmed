@@ -15,7 +15,7 @@ const CadastroForm = () => {
   });
 
   const [message, setMessage] = useState('');
-  const [alertType, setAlertType] = useState<string>('');
+  const [alertType, setAlertType] = useState<string>(''); // Garantindo que será usado
   const [isRecaptchaVerified, setIsRecaptchaVerified] = useState(false);
   const [isNoIndicacao, setIsNoIndicacao] = useState(false);
 
@@ -135,7 +135,7 @@ const CadastroForm = () => {
       <div className="mt-3">
         {message && (
           <div
-            className={`alert rounded-full text-sm p-3 ${alertType === 'danger' ? 'alert-red' : 'alert-success'}`}
+            className={`alert text-sm p-3 ${alertType === 'danger' ? 'alert-red' : 'alert-success'}`}
           >
             {message}
           </div>
