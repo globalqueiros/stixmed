@@ -1,22 +1,11 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { GoogleAnalytics } from '@next/third-parties/google';
 import Navbar from "../components/Navbar/page";
 import Cookie from "../components/Cookie/page";
 import Footer from "../components/Footer/page";
 import Bloqueio from "../components/Bloqueio/page";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: "Stixmed | Consultas online e home care",
@@ -39,8 +28,8 @@ export default function RootLayout({
         {children}
         <Cookie />
         <Footer />
+        <GoogleAnalytics gaId="G-BVVT8LYMPM" />
       </body>
-      <GoogleAnalytics gaId="G-BVVT8LYMPM" />
     </html>
   );
 }
