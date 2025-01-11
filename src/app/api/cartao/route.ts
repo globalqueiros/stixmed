@@ -1,28 +1,6 @@
 import { NextResponse } from 'next/server';
 import db from '../../../lib/db';
 
-function isValidCPF(cpf: string): boolean {
-    cpf = cpf.replace(/[^\d]/g, '');
-    if (cpf.length !== 11 || /^(\d)\1+$/.test(cpf)) return false;
-
-    let soma = 0;
-    for (let i = 0; i < 9; i++) soma += Number(cpf[i]) * (10 - i);
-    let resto = (soma * 10) % 11;
-    if (resto === 10 || resto === 11) resto = 0;
-    if (resto !== Number(cpf[9])) return false;
-
-    soma = 0;
-    for (let i = 0; i < 10; i++) soma += Number(cpf[i]) * (11 - i);
-    resto = (soma * 10) % 11;
-    if (resto === 10 || resto === 11) resto = 0;
-    return resto === Number(cpf[10]);
-}
-
-function isValidWhatsApp(whatsapp: string): boolean {
-    const regex = /^\(\d{2}\) \d{5}-\d{4}$/;
-    return regex.test(whatsapp);
-}
-
 function generateRandomNumber(): string {
     const randomNum = Math.floor(100000 + Math.random() * 900000);
     return randomNum.toString();

@@ -1,4 +1,3 @@
-import style from './styles.module.css';
 import Image from "next/image";
 import Link from "next/link";
 
