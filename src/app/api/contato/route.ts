@@ -1,4 +1,3 @@
-import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 
 interface EmailData {
@@ -10,18 +9,14 @@ interface EmailData {
   mensagem: string;
 }
 
-export async function POST(request: Request) {
-  const data: EmailData = await request.json();
-
-  const { nome, whatsapp, cpf, motivo, mensagem, email } = data;
-
+export async function enviarEmail({ nome, whatsapp, cpf, motivo, mensagem, email }: EmailData) {
   const user = 'contato@stixmed.med.br';
   const pass = 'xl6H@uO6vubb';
   const host = 'sg2plzcpnl503747.prod.sin2.secureserver.net';
 
   if (!user || !pass || !host) {
     console.error('As variáveis de ambiente não estão configuradas corretamente.');
-    return NextResponse.json({ error: 'Configuração de e-mail inválida' }, { status: 500 });
+    return;
   }
 
   const transporter = nodemailer.createTransport({
@@ -35,7 +30,7 @@ export async function POST(request: Request) {
   });
 
   const mailOptions = {
-    from: user,
+    from: user, 
     to: email,
     subject: `Novo contato de ${nome}`,
     text: `
@@ -50,9 +45,7 @@ export async function POST(request: Request) {
   try {
     const info = await transporter.sendMail(mailOptions);
     console.log('E-mail enviado com sucesso:', info.messageId);
-    return NextResponse.json({ success: 'E-mail enviado com sucesso!' });
   } catch (error) {
     console.error('Erro ao enviar o e-mail:', error);
-    return NextResponse.json({ error: 'Erro ao enviar o e-mail' }, { status: 500 });
   }
 }
