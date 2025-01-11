@@ -15,10 +15,10 @@ const CadastroForm = () => {
   });
 
   const [message, setMessage] = useState('');
-  const [alertType, setAlertType] = useState<string>(''); // Garantindo que será usado
   const [isRecaptchaVerified, setIsRecaptchaVerified] = useState(false);
   const [isNoIndicacao, setIsNoIndicacao] = useState(false);
 
+  // Validações
   const isValidCPF = (cpf: string) => {
     cpf = cpf.replace(/[^\d]/g, '');
     if (cpf.length !== 11 || /^(\d)\1+$/.test(cpf)) return false;
@@ -46,10 +46,8 @@ const CadastroForm = () => {
     setFormData({ ...formData, cpf: formattedCpf });
     if (input.length === 11 && !isValidCPF(input)) {
       setMessage('CPF inválido.');
-      setAlertType('danger');
     } else {
       setMessage('');
-      setAlertType('');
     }
   };
 
@@ -86,13 +84,11 @@ const CadastroForm = () => {
     e.preventDefault();
     if (!isRecaptchaVerified) {
       setMessage('Por favor, verifique o ReCAPTCHA.');
-      setAlertType('danger');
       return;
     }
 
     if (!isValidCPF(formData.cpf)) {
       setMessage('CPF inválido.');
-      setAlertType('danger');
       return;
     }
 
@@ -105,7 +101,6 @@ const CadastroForm = () => {
 
       const result = await response.json();
       setMessage(result.message);
-      setAlertType(result.success ? 'success' : 'danger');
 
       if (result.success) {
         setFormData({
@@ -122,7 +117,6 @@ const CadastroForm = () => {
     } catch (error) {
       console.error(error);
       setMessage('Erro ao enviar o formulário.');
-      setAlertType('danger');
     }
   };
 
@@ -134,9 +128,7 @@ const CadastroForm = () => {
       </p>
       <div className="mt-3">
         {message && (
-          <div
-            className={`alert text-sm p-3 ${alertType === 'danger' ? 'alert-red' : 'alert-success'}`}
-          >
+          <div className="alert text-sm p-3 alert-success">
             {message}
           </div>
         )}
