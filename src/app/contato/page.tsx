@@ -79,13 +79,14 @@ export default function Contato() {
 
     return (
         <>
-            <Script>
+            <Script id="huggy-widget">
                 {`var $_Huggy = { defaultCountry: '+55', uuid: '797a4ed5-1e52-4b01-9443-0608498b15fa', company: '358300' };
                 (function(i,s,o,g,r,a,m){ 
                     i[r]={context:{id:'ccc628a02aacf49a508e28a63e2c191d'}};a=o;o=s.createElement(o); 
                     o.async=1;o.src=g;m=s.getElementsByTagName(a)[0];m.parentNode.insertBefore(o,m); 
                 })(window,document,'script','https://js.huggy.chat/widget.min.js','pwz');`}
             </Script>
+
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 w-full max-w-7xl m-auto pt-4 pb-4 px-4">
                 <div>
                     <h3 className="text-xl font-semibold text-center">Entre em contato com a gente!</h3>
@@ -204,7 +205,7 @@ export default function Contato() {
                         </div>
                         <div className="mb-4">
                             <ReCAPTCHA
-                                sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ''}
+                                sitekey='6LeOxZwqAAAAABqDVmyHKfo-uaIeQY1YGntVRbCb'
                                 onChange={handleRecaptchaChange}
                             />
                         </div>

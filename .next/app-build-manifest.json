@@ -11,25 +11,15 @@
       "static/chunks/main-app.js",
       "static/chunks/app/not-found.js"
     ],
-    "/precadastro_homecare/page": [
+    "/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/precadastro_homecare/page.js"
+      "static/chunks/app/page.js"
     ],
-    "/api/homecare/route": [
+    "/contato/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/api/homecare/route.js"
-    ],
-    "/precadastro_cartaostixmed/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/precadastro_cartaostixmed/page.js"
-    ],
-    "/home_care/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/home_care/page.js"
+      "static/chunks/app/contato/page.js"
     ]
   }
 }
