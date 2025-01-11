@@ -22,29 +22,35 @@ const CadastroForm = () => {
   const isValidCPF = (cpf: string) => {
     cpf = cpf.replace(/[^\d]/g, '');
     if (cpf.length !== 11 || /^(\d)\1+$/.test(cpf)) return false;
-
+  
     let soma = 0;
     for (let i = 0; i < 9; i++) soma += Number(cpf[i]) * (10 - i);
     let resto = (soma * 10) % 11;
     if (resto === 10 || resto === 11) resto = 0;
     if (resto !== Number(cpf[9])) return false;
-
+  
     soma = 0;
     for (let i = 0; i < 10; i++) soma += Number(cpf[i]) * (11 - i);
     resto = (soma * 10) % 11;
     if (resto === 10 || resto === 11) resto = 0;
     return resto === Number(cpf[10]);
-  };
+  }; 
 
   const handleCpfChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    let input = event.target.value.replace(/\D/g, '');
+    let input = event.target.value.replace(/\D/g, ''); 
     if (input.length > 11) input = input.slice(0, 11);
-
     const formattedCpf = input
       .replace(/(\d{3})(\d)/, '$1.$2')
       .replace(/(\d{3})(\d)/, '$1.$2')
       .replace(/(\d{3})(\d{1,2})$/, '$1-$2');
     setFormData({ ...formData, cpf: formattedCpf });
+    if (input.length === 11 && !isValidCPF(input)) {
+      setMessage('CPF inválido.');
+      setAlertType('danger');
+    } else {
+      setMessage('');
+      setAlertType('');
+    }
   };
 
   const handleWhatsappChange = (e: React.ChangeEvent<HTMLInputElement>) => {
