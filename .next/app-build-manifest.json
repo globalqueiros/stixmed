@@ -20,42 +20,6 @@
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/api/contato/route.js"
-    ],
-    "/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/page.js"
-    ],
-    "/sobre_nos/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/sobre_nos/page.css",
-      "static/chunks/app/sobre_nos/page.js"
-    ],
-    "/telemedicina/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/telemedicina/page.js"
-    ],
-    "/cartao_stixmed/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/cartao_stixmed/page.js"
-    ],
-    "/home_care/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/home_care/page.js"
-    ],
-    "/precadastro_homecare/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/precadastro_homecare/page.js"
-    ],
-    "/precadastro_cartaostixmed/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/precadastro_cartaostixmed/page.js"
     ]
   }
 }

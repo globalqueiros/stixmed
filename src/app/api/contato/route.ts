@@ -1,51 +1,42 @@
-import nodemailer from 'nodemailer';
+import { NextResponse } from "next/server";
+import nodemailer from "nodemailer";
 
-interface EmailData {
-  nome: string;
-  whatsapp: string;
-  email: string;
-  cpf: string;
-  motivo: string;
-  mensagem: string;
-}
-
-export async function enviarEmail({ nome, whatsapp, cpf, motivo, mensagem, email }: EmailData) {
-  const user = 'contato@stixmed.med.br';
-  const pass = 'xl6H@uO6vubb';
-  const host = 'sg2plzcpnl503747.prod.sin2.secureserver.net';
-
-  if (!user || !pass || !host) {
-    console.error('As variáveis de ambiente não estão configuradas corretamente.');
-    return;
-  }
-
-  const transporter = nodemailer.createTransport({
-    host,
-    port: 587,
-    secure: false,
-    auth: {
-      user,
-      pass,
-    },
-  });
-
-  const mailOptions = {
-    from: user, 
-    to: email,
-    subject: `Novo contato de ${nome}`,
-    text: `
-      Nome: ${nome}
-      WhatsApp: ${whatsapp}
-      CPF: ${cpf}
-      Motivo: ${motivo}
-      Mensagem: ${mensagem}
-    `,
-  };
-
+export async function POST(req: Request) {
   try {
-    const info = await transporter.sendMail(mailOptions);
-    console.log('E-mail enviado com sucesso:', info.messageId);
+    const { nome, email, mensagem, whatsapp, cpf, motivo } = await req.json();
+
+    // Configuração do transporte do Nodemailer
+    const transporter = nodemailer.createTransport({
+      host: "smtp.gmail.com",
+      port: 587,
+      secure: false, // true para 465, false para outras portas
+      auth: {
+        user: process.env.EMAIL_USER, // Substituir pelo seu e-mail (use variáveis de ambiente)
+        pass: process.env.EMAIL_PASS, // Substituir pela sua senha ou token de app
+      },
+    });
+
+    // Configuração da mensagem
+    const mailOptions = {
+      from: email,
+      to: process.env.EMAIL_USER, // Substituir pelo seu e-mail
+      subject: `Nova mensagem de contato de ${nome}`,
+      text: `
+        Nome: ${nome}
+        E-mail: ${email}
+        WhatsApp: ${whatsapp}
+        CPF: ${cpf}
+        Motivo: ${motivo}
+        Mensagem: ${mensagem}
+      `,
+    };
+
+    // Envio do e-mail
+    await transporter.sendMail(mailOptions);
+
+    return NextResponse.json({ success: true });
   } catch (error) {
-    console.error('Erro ao enviar o e-mail:', error);
+    console.error("Erro ao enviar o e-mail:", error);
+    return NextResponse.json({ success: false, error: "Erro ao enviar o e-mail" });
   }
 }
