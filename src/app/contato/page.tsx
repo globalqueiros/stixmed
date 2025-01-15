@@ -1,13 +1,12 @@
 'use client';
-import { useState } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
+import { useEffect, useState } from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
+import Image from 'next/image';
+import Script from 'next/script';
+import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone } from '@fortawesome/free-solid-svg-icons';
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
-import Script from 'next/script';
-import React from 'react';
 
 export default function Contato() {
     const [nome, setNome] = useState('');
@@ -16,6 +15,38 @@ export default function Contato() {
     const [selectedOption, setSelectedOption] = useState('Informação');
     const [mensagem, setMensagem] = useState('');
     const [captchaValue, setCaptchaValue] = useState<string | null>(null);
+    const [message, setMessage] = useState('');
+    const [messageType, setMessageType] = useState<'success' | 'error' | null>(null);
+    const [protocolo, setProtocolo] = useState<string | null>(null);
+    const [loading, setLoading] = useState<boolean>(true);
+
+    useEffect(() => {
+        const currentTime = Date.now();
+        const protocoloData = localStorage.getItem('protocolo');
+        const protocoloTimestamp = localStorage.getItem('protocoloTimestamp');
+
+        if (protocoloData && protocoloTimestamp) {
+            const elapsedTime = currentTime - parseInt(protocoloTimestamp);
+            if (elapsedTime < 90 * 60 * 1000) {
+                setProtocolo(protocoloData);
+                setLoading(false);
+                return;
+            }
+        }
+
+        const newProtocolo = generateProtocolo();
+        localStorage.setItem('protocolo', newProtocolo);
+        localStorage.setItem('protocoloTimestamp', currentTime.toString());
+
+        setProtocolo(newProtocolo);
+        setLoading(false);
+
+    }, []);
+
+    const generateProtocolo = () => {
+        const currentYear = new Date().getFullYear();
+        return `${Date.now()} / ${currentYear}`;
+    };
 
     const handleNomeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const value = e.target.value;
@@ -46,25 +77,48 @@ export default function Contato() {
 
     const handleRecaptchaChange = (value: string | null) => setCaptchaValue(value);
 
-    const [message, setMessage] = React.useState('');
-    const [messageType, setMessageType] = React.useState<'success' | 'error' | null>(null);
-
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+
+        if (!nome) {
+            setMessage('Digite seu nome completo.');
+            setMessageType('error');
+            return;
+        }
+
+        if (!whatsapp || !/^\(\d{2}\) \d{4,5}-\d{4}$/.test(whatsapp)) {
+            setMessage('Digite um número de WhatsApp válido.');
+            setMessageType('error');
+            return;
+        }
+
+        if (!cpf || !/^\d{3}\.\d{3}\.\d{3}-\d{2}$/.test(cpf)) {
+            setMessage('Digite um CPF válido.');
+            setMessageType('error');
+            return;
+        }
+
+        if (!mensagem) {
+            setMessage('Digite sua mensagem.');
+            setMessageType('error');
+            return;
+        }
+
         if (!captchaValue) {
             setMessage('Por favor, complete o reCAPTCHA.');
             setMessageType('error');
             return;
         }
+
         try {
             const response = await fetch('/api/contato', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ nome, whatsapp, cpf, motivo: selectedOption, mensagem }),
+                body: JSON.stringify({ nome, whatsapp, cpf, motivo: selectedOption, mensagem, protocolo }),
             });
 
             if (response.ok) {
-                setMessage('Email enviado com sucesso!');
+                setMessage(`Email enviado com sucesso!`);
                 setMessageType('success');
             } else {
                 setMessage('Erro ao enviar o email. Tente novamente.');
@@ -98,7 +152,7 @@ export default function Contato() {
                         width={500}
                         height={500}
                         alt="Mulher de Call Center"
-                        className="rounded-2xl"
+                        className="rounded-2xl img-thumbnail"
                     />
                     <div className="py-3 space-y-2">
                         <h3 className='text-base font-semibold'>Telefones de Urgência e Emergência</h3>
@@ -117,7 +171,7 @@ export default function Contato() {
                 <div>
                     {message && (
                         <div
-                            className={`alert text-sm ${messageType === 'success' ? 'alert-success' : 'alert-danger'
+                            className={`alert rounded-full text-sm ${messageType === 'success' ? 'alert-success' : 'alert-danger'
                                 }`}
                             role="alert"
                         >
@@ -125,6 +179,21 @@ export default function Contato() {
                         </div>
                     )}
                     <form className="space-y-6" onSubmit={handleSubmit}>
+                        <div className="grid grid-cols-1 md:grid-cols-1 gap-1">
+                            <div>
+                                <label htmlFor="protocolo">Protocolo *</label>
+                                <input
+                                    type="text"
+                                    id="nome"
+                                    value={loading ? "Carregando..." : protocolo || ""}
+                                    onChange={handleNomeChange}
+                                    placeholder="00000000 / 0000"
+                                    className="text-sm w-full border rounded-xl p-2"
+                                    readOnly
+                                />
+                                <small className='text-danger'>Anote o número do protocolo.</small>
+                            </div>
+                        </div>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
                                 <label htmlFor="nome">Nome Completo *</label>
@@ -239,10 +308,10 @@ export default function Contato() {
                 <h2 className='text-xl font-semibold mb-1'>Responsáveis Técnicos:</h2>
                 <div className='flex flex-col mb-2'>
                     <p className='text-justify text-sm py-2'>
-                        Médico Geral: <strong>Humberto</strong>
+                        Médico(a) Geral: <strong>Humberto</strong>
                     </p>
                     <p className='text-justify text-sm'>
-                        Enfermeiro: <strong>André</strong>
+                        Enfermeiro(a): <strong>André</strong>
                     </p>
                 </div>
             </section>

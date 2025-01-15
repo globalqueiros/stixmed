@@ -3,40 +3,38 @@ import nodemailer from "nodemailer";
 
 export async function POST(req: Request) {
   try {
-    const { nome, email, mensagem, whatsapp, cpf, motivo } = await req.json();
+    const { protocolo, nome, email, mensagem, whatsapp, cpf, motivo } = await req.json();
 
-    // Configuração do transporte do Nodemailer
     const transporter = nodemailer.createTransport({
       host: "smtp.gmail.com",
-      port: 587,
-      secure: false, // true para 465, false para outras portas
+      port: 465,
+      secure: true,
       auth: {
-        user: process.env.EMAIL_USER, // Substituir pelo seu e-mail (use variáveis de ambiente)
-        pass: process.env.EMAIL_PASS, // Substituir pela sua senha ou token de app
-      },
+        user: 'corporationpagamentos@gmail.com',
+        pass: 'ukiarxcpmtszlqwd',
+      }
     });
 
-    // Configuração da mensagem
     const mailOptions = {
-      from: email,
-      to: process.env.EMAIL_USER, // Substituir pelo seu e-mail
-      subject: `Nova mensagem de contato de ${nome}`,
+      from: `"${nome}" <${email}>`,
+      to: 'corporationpagamentos@gmail.com',
+      subject: `Formulario enviado pelo "${nome}"`,
       text: `
-        Nome: ${nome}
-        E-mail: ${email}
-        WhatsApp: ${whatsapp}
-        CPF: ${cpf}
-        Motivo: ${motivo}
-        Mensagem: ${mensagem}
+        <p>Número do Protocolo: <strong>${protocolo}</strong></p>
+        <h4>Detalhes Pessoais:</h4>
+        <p>Eu, <strong>${nome}</strong>, portador(a) do CPF <strong>${cpf}</strong>, com número de whatsApp <strong>${whatsapp}</strong> e email <strong>${email}</strong>, venho por meio deste entrar em contato para informar o seguinte:</p>
+        <br>
+        <p>Motivo: <strong>${motivo}</strong></p>
+        <br>
+        <p>Mensagem: <strong>${mensagem}</strong></p>
       `,
     };
 
-    // Envio do e-mail
     await transporter.sendMail(mailOptions);
 
     return NextResponse.json({ success: true });
   } catch (error) {
-    console.error("Erro ao enviar o e-mail:", error);
-    return NextResponse.json({ success: false, error: "Erro ao enviar o e-mail" });
+    console.error("Erro ao enviar o email:", error);
+    return NextResponse.json({ success: false, error: "Erro ao enviar o email" });
   }
 }
