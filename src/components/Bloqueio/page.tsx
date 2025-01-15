@@ -1,7 +1,7 @@
 'use client';
 import { useEffect } from 'react';
 
-const BloquearConteudo = () => {
+const BloquearConteudo: React.FC = () => {
   useEffect(() => {
     const prevenirSelecao = (e: Event) => e.preventDefault();
 
@@ -11,6 +11,8 @@ const BloquearConteudo = () => {
       document.body.onselectstart = null;
     };
   }, []);
+
+  return null;
 };
 
 export default BloquearConteudo;

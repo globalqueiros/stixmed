@@ -1,0 +1,16 @@
+{
+  "/api/homecare/route": "app/api/homecare/route.js",
+  "/api/contato/route": "app/api/contato/route.js",
+  "/api/cartao/route": "app/api/cartao/route.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/contato/page": "app/contato/page.js",
+  "/cartao_stixmed/page": "app/cartao_stixmed/page.js",
+  "/home_care/page": "app/home_care/page.js",
+  "/precadastro_homecare/page": "app/precadastro_homecare/page.js",
+  "/politica_privacidade/page": "app/politica_privacidade/page.js",
+  "/page": "app/page.js",
+  "/precadastro_cartaostixmed/page": "app/precadastro_cartaostixmed/page.js",
+  "/sobre_nos/page": "app/sobre_nos/page.js",
+  "/telemedicina/page": "app/telemedicina/page.js"
+}

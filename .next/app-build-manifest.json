@@ -1,0 +1,135 @@
+{
+  "pages": {
+    "/api/homecare/route": [
+      "static/chunks/webpack-3e3ac8f5caee51b3.js",
+      "static/chunks/4bd1b696-e628d1649e5a8ddf.js",
+      "static/chunks/517-20c0042743b5da49.js",
+      "static/chunks/main-app-c8e3d2a9bfede297.js",
+      "static/chunks/app/api/homecare/route-9b2ec29d81f959ae.js"
+    ],
+    "/api/contato/route": [
+      "static/chunks/webpack-3e3ac8f5caee51b3.js",
+      "static/chunks/4bd1b696-e628d1649e5a8ddf.js",
+      "static/chunks/517-20c0042743b5da49.js",
+      "static/chunks/main-app-c8e3d2a9bfede297.js",
+      "static/chunks/app/api/contato/route-a37258f6dc752f30.js"
+    ],
+    "/api/cartao/route": [
+      "static/chunks/webpack-3e3ac8f5caee51b3.js",
+      "static/chunks/4bd1b696-e628d1649e5a8ddf.js",
+      "static/chunks/517-20c0042743b5da49.js",
+      "static/chunks/main-app-c8e3d2a9bfede297.js",
+      "static/chunks/app/api/cartao/route-166c59bd1327de76.js"
+    ],
+    "/not-found": [
+      "static/chunks/webpack-3e3ac8f5caee51b3.js",
+      "static/chunks/4bd1b696-e628d1649e5a8ddf.js",
+      "static/chunks/517-20c0042743b5da49.js",
+      "static/chunks/main-app-c8e3d2a9bfede297.js",
+      "static/chunks/970-4045a13dd7407a6e.js",
+      "static/chunks/173-d72d63a12d4509b7.js",
+      "static/chunks/app/not-found-16d36800f436eb99.js"
+    ],
+    "/_not-found/page": [
+      "static/chunks/webpack-3e3ac8f5caee51b3.js",
+      "static/chunks/4bd1b696-e628d1649e5a8ddf.js",
+      "static/chunks/517-20c0042743b5da49.js",
+      "static/chunks/main-app-c8e3d2a9bfede297.js",
+      "static/chunks/app/_not-found/page-8c2ae52e8d22d490.js"
+    ],
+    "/layout": [
+      "static/chunks/webpack-3e3ac8f5caee51b3.js",
+      "static/chunks/4bd1b696-e628d1649e5a8ddf.js",
+      "static/chunks/517-20c0042743b5da49.js",
+      "static/chunks/main-app-c8e3d2a9bfede297.js",
+      "static/css/10cf04b6acf7a3c1.css",
+      "static/css/b7b7d8e177c7c814.css",
+      "static/chunks/970-4045a13dd7407a6e.js",
+      "static/chunks/173-d72d63a12d4509b7.js",
+      "static/chunks/app/layout-c81b59c695a34e8f.js"
+    ],
+    "/contato/page": [
+      "static/chunks/webpack-3e3ac8f5caee51b3.js",
+      "static/chunks/4bd1b696-e628d1649e5a8ddf.js",
+      "static/chunks/517-20c0042743b5da49.js",
+      "static/chunks/main-app-c8e3d2a9bfede297.js",
+      "static/chunks/870fdd6f-50445a1160ad87db.js",
+      "static/chunks/69b09407-f66340b5ff85b9bc.js",
+      "static/chunks/970-4045a13dd7407a6e.js",
+      "static/chunks/173-d72d63a12d4509b7.js",
+      "static/chunks/112-a5927ed8e2bc4f13.js",
+      "static/chunks/529-f7e076ee70f27381.js",
+      "static/chunks/app/contato/page-606a21f0fc0afd7a.js"
+    ],
+    "/cartao_stixmed/page": [
+      "static/chunks/webpack-3e3ac8f5caee51b3.js",
+      "static/chunks/4bd1b696-e628d1649e5a8ddf.js",
+      "static/chunks/517-20c0042743b5da49.js",
+      "static/chunks/main-app-c8e3d2a9bfede297.js",
+      "static/chunks/970-4045a13dd7407a6e.js",
+      "static/chunks/173-d72d63a12d4509b7.js",
+      "static/chunks/app/cartao_stixmed/page-16fac9a42983b676.js"
+    ],
+    "/home_care/page": [
+      "static/chunks/webpack-3e3ac8f5caee51b3.js",
+      "static/chunks/4bd1b696-e628d1649e5a8ddf.js",
+      "static/chunks/517-20c0042743b5da49.js",
+      "static/chunks/main-app-c8e3d2a9bfede297.js",
+      "static/chunks/970-4045a13dd7407a6e.js",
+      "static/chunks/173-d72d63a12d4509b7.js",
+      "static/chunks/app/home_care/page-c91922b41927c805.js"
+    ],
+    "/precadastro_homecare/page": [
+      "static/chunks/webpack-3e3ac8f5caee51b3.js",
+      "static/chunks/4bd1b696-e628d1649e5a8ddf.js",
+      "static/chunks/517-20c0042743b5da49.js",
+      "static/chunks/main-app-c8e3d2a9bfede297.js",
+      "static/chunks/112-a5927ed8e2bc4f13.js",
+      "static/chunks/app/precadastro_homecare/page-28cdbcda67c8de7e.js"
+    ],
+    "/politica_privacidade/page": [
+      "static/chunks/webpack-3e3ac8f5caee51b3.js",
+      "static/chunks/4bd1b696-e628d1649e5a8ddf.js",
+      "static/chunks/517-20c0042743b5da49.js",
+      "static/chunks/main-app-c8e3d2a9bfede297.js",
+      "static/css/ecf5c86cb3aafc44.css",
+      "static/chunks/app/politica_privacidade/page-53c716465aca052d.js"
+    ],
+    "/page": [
+      "static/chunks/webpack-3e3ac8f5caee51b3.js",
+      "static/chunks/4bd1b696-e628d1649e5a8ddf.js",
+      "static/chunks/517-20c0042743b5da49.js",
+      "static/chunks/main-app-c8e3d2a9bfede297.js",
+      "static/chunks/870fdd6f-50445a1160ad87db.js",
+      "static/chunks/970-4045a13dd7407a6e.js",
+      "static/chunks/173-d72d63a12d4509b7.js",
+      "static/chunks/529-f7e076ee70f27381.js",
+      "static/chunks/app/page-b7a69e931a2c958f.js"
+    ],
+    "/precadastro_cartaostixmed/page": [
+      "static/chunks/webpack-3e3ac8f5caee51b3.js",
+      "static/chunks/4bd1b696-e628d1649e5a8ddf.js",
+      "static/chunks/517-20c0042743b5da49.js",
+      "static/chunks/main-app-c8e3d2a9bfede297.js",
+      "static/chunks/112-a5927ed8e2bc4f13.js",
+      "static/chunks/app/precadastro_cartaostixmed/page-a547e31d9e3a81c4.js"
+    ],
+    "/sobre_nos/page": [
+      "static/chunks/webpack-3e3ac8f5caee51b3.js",
+      "static/chunks/4bd1b696-e628d1649e5a8ddf.js",
+      "static/chunks/517-20c0042743b5da49.js",
+      "static/chunks/main-app-c8e3d2a9bfede297.js",
+      "static/css/cf47b71dad239a70.css",
+      "static/chunks/970-4045a13dd7407a6e.js",
+      "static/chunks/app/sobre_nos/page-bbd6674b0d7c10f7.js"
+    ],
+    "/telemedicina/page": [
+      "static/chunks/webpack-3e3ac8f5caee51b3.js",
+      "static/chunks/4bd1b696-e628d1649e5a8ddf.js",
+      "static/chunks/517-20c0042743b5da49.js",
+      "static/chunks/main-app-c8e3d2a9bfede297.js",
+      "static/chunks/970-4045a13dd7407a6e.js",
+      "static/chunks/app/telemedicina/page-736dd0f91a344a5b.js"
+    ]
+  }
+}
