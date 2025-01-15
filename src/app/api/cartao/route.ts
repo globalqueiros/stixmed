@@ -20,7 +20,7 @@ export async function POST(req: Request) {
         const created = now.toISOString().slice(0, 19).replace('T', ' ');
         const servico = '0';
         const values = [
-            indicacao || null, // Define como null caso não exista
+            indicacao || null,
             servico,
             prontuario,
             nome,

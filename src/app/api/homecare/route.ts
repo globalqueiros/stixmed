@@ -48,7 +48,6 @@ export async function POST(req: Request) {
             );
         }
 
-        // Validações específicas
         if (!isValidCPF(cpf)) {
             return NextResponse.json(
                 { success: false, message: 'CPF inválido.' },

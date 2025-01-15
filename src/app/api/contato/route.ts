@@ -22,7 +22,9 @@ export async function POST(req: Request) {
       text: `
         <p>Número do Protocolo: <strong>${protocolo}</strong></p>
         <h4>Detalhes Pessoais:</h4>
-        <p>Eu, <strong>${nome}</strong>, portador(a) do CPF <strong>${cpf}</strong>, com número de whatsApp <strong>${whatsapp}</strong> e email <strong>${email}</strong>, venho por meio deste entrar em contato para informar o seguinte:</p>
+        <p><strong>Nome:</strong> ${nome}</p>
+        <p><strong>CPF:</strong> ${cpf}</p>
+        <p><strong>WhatsApp:</strong> ${whatsapp}</p>
         <br>
         <p>Motivo: <strong>${motivo}</strong></p>
         <br>
