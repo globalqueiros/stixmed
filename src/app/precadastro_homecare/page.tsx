@@ -120,20 +120,23 @@ const CadastroForm = () => {
   };
 
   return (
-    <section className="py-4 max-w-6xl m-auto">
+    <section className="py-4 p-2 max-w-6xl m-auto">
       <h2 className="text-xl font-bold text-left mb-1">Pré-Cadastro do Home Care</h2>
       <p className="text-sm text-black mb-2">
         Atenção! Formulário exclusivo para quem tem interesse no <strong>Home Care</strong>
       </p>
       <div className="mt-3">
         {message && (
-          <div className={`alert text-sm p-3 alert-${message.includes('sucesso') ? 'success' : 'error'}`}>
+          <div
+            className={`alert ${message.toLowerCase().includes('sucesso') ? 'alert-success' : 'alert-danger'
+              } rounded-full text-sm p-3`}
+          >
             {message}
           </div>
         )}
       </div>
       <form onSubmit={handleSubmit} className="mx-auto space-y-4">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-6">
           <div>
             <label>Nome *</label>
             <input
@@ -141,7 +144,7 @@ const CadastroForm = () => {
               name="nome"
               value={formData.nome}
               onChange={handleChange}
-              placeholder="Digite seu nome completo..."
+              placeholder="Nome completo..."
               className="w-full border rounded-2xl px-4 py-2 capitalize text-sm"
               required
             />
@@ -169,8 +172,6 @@ const CadastroForm = () => {
               placeholder="123.456.789-09"
             />
           </div>
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           <div>
             <label>WhatsApp *</label>
             <input
@@ -211,7 +212,7 @@ const CadastroForm = () => {
             </select>
           </div>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
           <div>
             <label>Indicação *</label>
             <input
@@ -224,7 +225,7 @@ const CadastroForm = () => {
               disabled={isNoIndicacao}
               required={!isNoIndicacao}
             />
-            <div className="flex items-center mt-0">
+            <div className="flex items-center mt-2">
               <input
                 type="checkbox"
                 id="indicacao"
@@ -232,22 +233,22 @@ const CadastroForm = () => {
                 onChange={handleIndicacaoChange}
                 className="mr-2 cursor-pointer"
               />
-              <label htmlFor="indicacao" className="ms-2 mt-2 text-sm cursor-pointer">
+              <label htmlFor="indicacao" className="text-sm cursor-pointer">
                 Não tem indicação
               </label>
             </div>
           </div>
-        </div>
-        <div>
-          <label>Endereço Atendimento *</label>
-          <input
-            name="endereco"
-            value={formData.endereco}
-            onChange={handleChange}
-            className="w-full border rounded-2xl px-4 py-2 text-sm"
-            placeholder="Rua Cel Jose Eusebio, N° 95, CS 13, Higienópolis, São Paulo - SP"
-            required
-          />
+          <div>
+            <label>Endereço Atendimento *</label>
+            <input
+              name="endereco"
+              value={formData.endereco}
+              onChange={handleChange}
+              className="w-full border rounded-2xl px-4 py-2 text-sm"
+              placeholder="Rua Cel Jose Eusebio, N° 95, CS 13, Higienópolis, São Paulo - SP"
+              required
+            />
+          </div>
         </div>
         <div className="mt-4">
           <ReCAPTCHA

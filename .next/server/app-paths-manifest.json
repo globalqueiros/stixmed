@@ -1,3 +1,9 @@
 {
-  "/page": "app/page.js"
+  "/api/homecare/route": "app/api/homecare/route.js",
+  "/precadastro_cartaostixmed/page": "app/precadastro_cartaostixmed/page.js",
+  "/precadastro_homecare/page": "app/precadastro_homecare/page.js",
+  "/page": "app/page.js",
+  "/cartao_stixmed/page": "app/cartao_stixmed/page.js",
+  "/home_care/page": "app/home_care/page.js",
+  "/_not-found/page": "app/_not-found/page.js"
 }
