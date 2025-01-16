@@ -71,7 +71,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="bg-[#10c4b5] text-white py-0 m-auto">
+      <section className="bg-[#10c4b5] text-white py-4 m-auto">
         <div className="container mx-auto flex flex-col md:flex-row items-center">
           <div className="md:w-1/2 px-6">
             <h2 className="text-base text-white-300 mb-2">Home Care</h2>

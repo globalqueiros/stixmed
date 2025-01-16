@@ -26,7 +26,7 @@ export default function Footer() {
                                 <FontAwesomeIcon
                                     icon={faInstagram}
                                     style={{
-                                        width: '1.5rem',
+                                        width: '2.5rem',
                                         color: 'white',
                                         cursor: 'pointer',
                                     }}
