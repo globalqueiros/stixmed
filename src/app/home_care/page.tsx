@@ -11,8 +11,6 @@ export default function HomeCare() {
                 "Equipe Multidisciplinar",
                 "Atendimento em todo território Nacional",
             ],
-            unavailableFeatures: [
-            ],
         },
         {
             title: "Home Master",
@@ -22,10 +20,7 @@ export default function HomeCare() {
                 "Equipe Multidisciplinar",
                 "Atendimento com ambulância em caso de emergência e urgência",
                 "Seguro de vida (Porto Seguro)",
-                "Atendimento em todo território Nacional"
-
-            ],
-            unavailableFeatures: [
+                "Atendimento em todo território Nacional",
             ],
         },
         {
@@ -37,45 +32,53 @@ export default function HomeCare() {
                 "Administração de medicamentos",
                 "Atendimento com ambulância em caso de emergência e urgência",
                 "Seguro de vida (Porto Seguro)",
-                "Atendimento em todo território Nacional"
-            ],
-            unavailableFeatures: [
+                "Atendimento em todo território Nacional",
             ],
         },
     ];
 
     return (
         <>
-            <section className="py-3">
-                <div className="flex md:flex-row flex-col justify-around items-center max-w-7xl m-auto">
-                    <div className="flex flex-col items-start justify-start md:ml-20 mx-10 mt-10 md:mt-0">
-                        <p className="text-black font-semibold pb-2">Home Care</p>
-                        <h3 className="font-bold md:text-3xl text-3xl text-black">Cuidados Que Transformam Vidas: Home Care Personalizado para Você</h3>
-                        <p className="md:text-sm teat-sm font-normal text-back mt-3 text-justify">Oferecemos cuidados personalizados no conforto do seu lar, com uma equipe multidisciplinar especializada. Garantimos segurança, qualidade de vida e atenção humanizada, promovendo o bem-estar que você e sua família merecem.</p>
-                        <div className="mt-3 flex justify-center items-center gap-5">
-                            <a href="#planos" className="text-white font-semibold rounded-full px-5 py-2.5 bg-[#10c4b5]">Contratar Agora</a>
+            <section className="py-8">
+                <div className="flex flex-col md:flex-row justify-around items-center max-w-7xl mx-auto px-0 sm-px-0 md:px-0 lg:px-8">
+                    <div className="flex flex-col items-start justify-start md:ml-20 mx-4 md:mx-0 mt-0 md:mt-0">
+                        <h3 className="m-auto text-center min-w-3xl font-bold text-xl md:text-lg lg:text-2xl xl:text-2xl text-black leading-snug text-justify">
+                            Cuidados Que Transformam Vida<br></br> Home Care Personalizado para Você
+                        </h3>
+                        <p className="text-base sm:text-xs md:text-sm xl:text-sm font-normal text-black mt-3 text-justify leading-7">
+                            Oferecemos cuidados personalizados no conforto do seu lar, com uma equipe multidisciplinar especializada.
+                            Garantimos segurança, qualidade de vida e atenção humanizada, promovendo o bem-estar que você e sua família merecem.
+                        </p>
+                        <div className="mt-3 flex justify-start items-center gap-5">
+                            <a
+                                href="#planos"
+                                className="text-white font-semibold rounded-full px-5 py-2.5 bg-[#10c4b5] hover:bg-[#0ea598] transition duration-300"
+                            >
+                                Contratar Agora
+                            </a>
                         </div>
                     </div>
-                    <div className="mr-20 md:block hidden">
+                    <div className="mt-10 md:mt-0 hidden md:block">
                         <Image
                             src="/enfermeirahomecare.webp"
                             width={1500}
                             height={1500}
-                            objectFit="cover"
-                            className='rounded-2xl img-thumbnail'
+                            className="rounded-2xl object-cover img-thumbnail"
                             alt="Enfermeira"
+                            priority
                         />
                     </div>
                 </div>
             </section>
-            <section className="max-w-7xl mx-auto py-8 px-4 sm:px-6 bg-[#25a197] lg:px-8 rounded-lg">
-                <h4 className="text-2xl font-bold text-white mb-1 text-center md:text-left">
+            <section className="max-w-7xl mx-auto py-4 sm:py-4 md:py-12 px-4 sm:px-6 lg:px-8 bg-[#25a197] rounded-lg">
+                <h4 className="text-xl sm:text-xl lg:text-2xl font-bold text-white mb-3 text-center md:text-left">
                     Por que escolher nosso Home Care?
                 </h4>
-                <p className="text-sm text-white mb-6 text-left md:text-left">
-                    Escolha nosso home care para receber cuidados especializados no conforto do seu lar. Nossa equipe dedicada prioriza seu bem-estar, oferecendo segurança, atenção humanizada e qualidade de vida para você e sua família.
+                <p className="text-sm sm:text-sm md:text-sm lg:text-sm xl:text-sm text-white mb-4 text-justify md:text-left leading-7">
+                    Escolha nosso home care para receber cuidados especializados no conforto do seu lar. Nossa equipe dedicada
+                    prioriza seu bem-estar, oferecendo segurança, atenção humanizada e qualidade de vida para você e sua família.
                 </p>
-                <ul className="text-sm list-disc list-inside text-white space-y-1 sm:space-y-2 lg:space-y-2">
+                <ul className="text-sm sm:text-sm list-disc list-inside text-white space-y-3 sm:space-y-3 lg:space-y-3">
                     <li>Equipe multidisciplinar</li>
                     <li>Administração de medicamentos</li>
                     <li>Seguro de vida (Porto Seguro)</li>
@@ -83,16 +86,18 @@ export default function HomeCare() {
                     <li>Atendimento em todo território Nacional</li>
                 </ul>
             </section>
-            <section id='planos' className="pt-3 pb-3">
-                <h2 className="text-center text-xl md:text-xl lg:text-3xl font-semibold leading-relaxed">
+
+            {/* Planos */}
+            <section id="planos" className="pt-4 pb-8">
+                <h2 className="text-center text-xl sm:text-2xl lg:text-3xl font-semibold leading-relaxed">
                     Conheça Nossos Planos
                 </h2>
-                <p className="text-center mt-2">Confira cada serviço em cada plano</p>
-                <div className="flex flex-wrap justify-center gap-6 p-6">
+                <p className="text-center mt-2 text-sm sm:text-base">Confira cada serviço em cada plano</p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto p-4 sm:p-6 lg:p-8">
                     {plans.map((plan, index) => (
                         <div
                             key={index}
-                            className="w-full max-w-sm p-0 bg-white border border-gray-200 rounded-2xl shadow-lg dark:bg-gray-800 dark:border-gray-700 flex flex-col"
+                            className="w-full max-w-sm bg-white border border-gray-200 rounded-2xl shadow-lg flex flex-col"
                         >
                             <h5 className="uppercase mb-3 text-xl bg-[#10c4b5] text-white font-semibold p-6">
                                 {plan.title}
@@ -103,9 +108,9 @@ export default function HomeCare() {
                                 <span className="text-sm font-semibold -translate-y-5">,99</span>
                                 <span className="ml-1 text-sm font-normal text-black">/mês</span>
                             </div>
-                            <ul role="list" className="my-7 space-y-4 flex-grow">
+                            <ul role="list" className="my-7 space-y-4 flex-grow px-6">
                                 {plan.features.map((feature, idx) => (
-                                    <li key={idx} className="flex items-center pl-6 pr-6 text-center justify-center">
+                                    <li key={idx} className="flex items-center text-center justify-center">
                                         <svg
                                             className="w-4 h-4 text-[#10c4b5]"
                                             xmlns="http://www.w3.org/2000/svg"
@@ -119,27 +124,9 @@ export default function HomeCare() {
                                         </span>
                                     </li>
                                 ))}
-                                {plan.unavailableFeatures.map((feature, idx) => (
-                                    <li
-                                        key={idx}
-                                        className="flex items-center line-through decoration-gray-500"
-                                    >
-                                        <svg
-                                            className="w-5 h-5 text-gray-400"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            fill="currentColor"
-                                            viewBox="0 0 20 20"
-                                        >
-                                            <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
-                                        </svg>
-                                        <span className="ml-3 text-base font-normal text-gray-500 pl-6 pr-6">
-                                            {feature}
-                                        </span>
-                                    </li>
-                                ))}
                             </ul>
-                            <Link href={`/precadastro_homecare`}
-                                type="button"
+                            <Link
+                                href={`/precadastro_homecare`}
                                 className="mt-auto text-center w-full px-5 py-3 text-sm font-medium text-white bg-[#10c4b5]"
                             >
                                 Contratar Plano
@@ -149,5 +136,5 @@ export default function HomeCare() {
                 </div>
             </section>
         </>
-    )
+    );
 }
