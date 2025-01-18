@@ -26,7 +26,7 @@ export default function Footer() {
                                 <FontAwesomeIcon
                                     icon={faInstagram}
                                     style={{
-                                        width: '1.5rem',
+                                        width: '2rem',
                                         color: 'white',
                                         cursor: 'pointer',
                                     }}
@@ -54,7 +54,7 @@ export default function Footer() {
                 </div>
             </div>
             <div
-                className="bg-white-50 w-full m-auto flex flex-col justify-center items-start py-3 px-3"
+                className="bg-white-50 w-full m-auto flex flex-col justify-center items-start py-2 px-3"
                 style={{ background: '#06786f' }}
             >
                 <p className="text-white min-w-4xl m-auto text-xs text-justify leading-relaxed pb-1">
