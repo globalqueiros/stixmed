@@ -45,7 +45,7 @@ export default function HomeCare() {
                         <h3 className="m-auto text-center min-w-3xl font-bold text-xl md:text-lg lg:text-2xl xl:text-2xl text-black leading-snug text-justify">
                             Cuidados Que Transformam Vida<br></br> Home Care Personalizado para Você
                         </h3>
-                        <p className="text-base sm:text-xs md:text-sm xl:text-sm font-normal text-black mt-3 text-justify leading-7">
+                        <p className="text-base sm:text-xs md:text-sm xl:text-sm font-normal text-black mt-3 text-justify leading-8">
                             Oferecemos cuidados personalizados no conforto do seu lar, com uma equipe multidisciplinar especializada.
                             Garantimos segurança, qualidade de vida e atenção humanizada, promovendo o bem-estar que você e sua família merecem.
                         </p>
