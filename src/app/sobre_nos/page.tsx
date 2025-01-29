@@ -43,6 +43,11 @@ const cardData: CardProps[] = [
 export default function SobreNos() {
     return (
         <>
+            <section className='bg-[linear-gradient(287.38deg,_#06786f_0%,_#25a096_100%)]'>
+                <div className="container flex flex-col md:flex-row justify-between sm:max-w-8xl md:mr-10 lg:mr-0 xl:mr-0 2xl:max-w-6xl py-2 md:py-3 gap-y-10 mx-auto">
+                    <h4>A Stixmed foi criada para oferecer suporte no cuidado com a sua saúde de forma ágil, segura e simplificada.</h4>
+                </div>
+            </section>
             <div className="container flex flex-col md:flex-row justify-between sm:max-w-8xl md:mr-10 lg:mr-0 xl:mr-0 2xl:max-w-6xl py-4 md:py-3 gap-y-10 mx-auto">
                 <div className="mx-10 md:mx-0">
                     <Image

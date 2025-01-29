@@ -1,7 +1,6 @@
-import style from './styles.module.css';
 import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import Link from 'next/link';
 
 export default function Footer() {
@@ -9,10 +8,13 @@ export default function Footer() {
 
     return (
         <>
-            <div className="bg-white-50 h-1/2 w-full flex md:flex-row flex-col justify-around items-start py-0" style={{ background: '#06786f' }}>
-                <div className="py-4 pl-3 sm:pl-0">
+            <div
+                className="bg-white-50 pt-2 h-1/2 w-full flex md:flex-row flex-col justify-around items-start py-0"
+                style={{ background: "#06786f" }}
+            >
+                <div className="py-2 pl-3 sm:pl-0">
                     <ul>
-                        <Link href='/'>
+                        <Link href="/">
                             <Image
                                 src="/logo_branco.png"
                                 width={200}
@@ -20,39 +22,61 @@ export default function Footer() {
                                 alt="Logo Stixmed"
                             />
                         </Link>
-                        <div className="flex flex-col items-center justify-center pt-3 pb-0.3">
-                            <p className="text-center text-lg font-normal text-white md:text-sm">Siga nossas redes sociais</p>
-                            <Link href="https://www.instagram.com/stixmed_saude/" target='_blank' className="my-2">
-                                <FontAwesomeIcon
-                                    icon={faInstagram}
-                                    style={{
-                                        width: '2rem',
-                                        color: 'white',
-                                        cursor: 'pointer',
-                                    }}
-                                />
-                            </Link>
+                        <div className="flex flex-col items-center justify-center pt-2 pb-0">
+                            <p className="text-center text-sm font-normal text-white md:text-sm">
+                                Siga nossas redes sociais
+                            </p>
+                            <div className="flex flex-row items-center justify-center gap-x-4 mt-2">
+                                <Link
+                                    href="https://www.instagram.com/stixmedsaude/"
+                                    target="_blank"
+                                    aria-label="Instagram"
+                                >
+                                    <FontAwesomeIcon
+                                        icon={faInstagram}
+                                        style={{
+                                            width: "1.4rem",
+                                            color: "white",
+                                            cursor: "pointer",
+                                        }}
+                                    />
+                                </Link>
+                                <Link
+                                    href="https://www.facebook.com/profile.php?id=61571851062262"
+                                    target="_blank"
+                                    aria-label="Facebook"
+                                >
+                                    <FontAwesomeIcon
+                                        icon={faFacebook}
+                                        style={{
+                                            width: "1.4rem",
+                                            color: "white",
+                                            cursor: "pointer",
+                                        }}
+                                    />
+                                </Link>
+                            </div>
                         </div>
                     </ul>
                 </div>
                 <div className="py-3 pb-1 pl-3 pb-2 sm:pl-0">
-                    <ul>
-                        <h5 className='text-white font-bold text-lg pb-1.5'>Institucional</h5>
-                        <li className={style.link}><Link href='/sobre_nos'>Sobre Nós</Link></li>
-                        <li className={style.link}><Link href='/telemedicina'>Telemedicina</Link></li>
-                        <li className={style.link}><Link href='/cartao_stixmed'>Cartão Stixmed</Link></li>
-                        <li className={style.link}><Link href='/home_care'>Home Care</Link></li>
+                    <ul className='space-y-2'>
+                        <h5 className='text-white font-bold text-lg pb-1'>Institucional</h5>
+                        <li className="text-sm"><Link href='/sobre_nos'>Sobre Nós</Link></li>
+                        <li className="text-sm"><Link href='/telemedicina'>Telemedicina</Link></li>
+                        <li className="text-sm"><Link href='/cartao_stixmed'>Cartão Stixmed</Link></li>
+                        <li className="text-sm"><Link href='/home_care'>Home Care</Link></li>
                     </ul>
                 </div>
                 <div className="py-3 pb-1 pl-3 pb-0 sm:pl-0">
-                    <ul>
-                        <h5 className='text-white font-bold text-lg pb-1.5'>Stixmed</h5>
-                        <li className={style.link}><Link href='/contato'>Contato</Link></li>
-                        <li className={style.link}><Link href='https://paciente.stixmed.med.br/negociacao'>Portal de Negociação</Link></li>
-                        <li className={style.link}><Link href='https://career.groupqueiros.com/'>Trabalhe Conosco</Link></li>
+                    <ul className='space-y-2'>
+                        <h5 className='text-white font-bold text-lg pb-1'>Stixmed</h5>
+                        <li className="text-sm"><Link href='/contato'>Contato</Link></li>
+                        <li className="text-sm"><Link href='https://paciente.stixmed.med.br/negociacao'>Portal de Negociação</Link></li>
+                        <li className="text-sm"><Link href='https://career.groupqueiros.com/'>Trabalhe Conosco</Link></li>
                     </ul>
                 </div>
-            </div>
+            </div >
             <div
                 className="bg-white-50 w-full m-auto flex flex-col justify-center items-start py-2 px-3"
                 style={{ background: '#06786f' }}

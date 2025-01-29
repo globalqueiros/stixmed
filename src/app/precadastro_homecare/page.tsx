@@ -128,8 +128,8 @@ const CadastroForm = () => {
       <div className="mt-3">
         {message && (
           <div
-            className={`alert ${message.toLowerCase().includes('sucesso') ? 'alert-success' : 'alert-danger'
-              } rounded-full text-sm p-3`}
+            className={`alert rounded-full ${message.toLowerCase().includes('sucesso') ? 'alert-success' : 'alert-danger'
+              } text-sm p-3`}
           >
             {message}
           </div>
@@ -225,15 +225,15 @@ const CadastroForm = () => {
               disabled={isNoIndicacao}
               required={!isNoIndicacao}
             />
-            <div className="flex items-center mt-2">
+            <div className="flex items-center mt-2 space-x-2">
               <input
                 type="checkbox"
                 id="indicacao"
                 checked={isNoIndicacao}
                 onChange={handleIndicacaoChange}
-                className="mr-2 cursor-pointer"
+                className="cursor-pointer"
               />
-              <label htmlFor="indicacao" className="text-sm cursor-pointer">
+              <label htmlFor="indicacao" className="text-sm cursor-pointer flex items-center mt-2">
                 Não tem indicação
               </label>
             </div>

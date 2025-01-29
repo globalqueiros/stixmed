@@ -1,7 +1,13 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
 
-export default function HomeCare() {
+export default function Planos() {
     const plans = [
         {
             title: "Home Básico",
@@ -18,19 +24,19 @@ export default function HomeCare() {
             features: [
                 "Remoção do Paciente",
                 "Equipe Multidisciplinar",
-                "Atendimento com ambulância em caso de emergência e urgência",
+                "Atendimento com ambulância em emergências e urgências",
                 "Seguro de vida (Porto Seguro)",
                 "Atendimento em todo território Nacional",
             ],
         },
         {
-            title: "HOME PREMIUM",
+            title: "Home Premium",
             price: 859,
             features: [
                 "Remoção do Paciente",
                 "Equipe Multidisciplinar",
                 "Administração de medicamentos",
-                "Atendimento com ambulância em caso de emergência e urgência",
+                "Atendimento com ambulância em emergências e urgências",
                 "Seguro de vida (Porto Seguro)",
                 "Atendimento em todo território Nacional",
             ],
@@ -40,14 +46,15 @@ export default function HomeCare() {
     return (
         <>
             <section className="py-8">
-                <div className="flex flex-col md:flex-row justify-around items-center max-w-7xl mx-auto px-0 sm-px-0 md:px-0 lg:px-8">
-                    <div className="flex flex-col items-start justify-start md:ml-20 mx-4 md:mx-0 mt-0 md:mt-0">
-                        <h3 className="m-auto text-center min-w-3xl font-bold text-xl md:text-lg lg:text-2xl xl:text-2xl text-black leading-snug text-justify">
-                            Cuidados Que Transformam Vida<br></br> Home Care Personalizado para Você
+                <div className="flex flex-col md:flex-row justify-around items-center max-w-7xl mx-auto px-4">
+                    <div className="flex flex-col items-start justify-start md:ml-20 mx-4">
+                        <h3 className="m-auto text-center font-bold text-xl md:text-lg lg:text-2xl text-black leading-snug">
+                            Cuidados Que Transformam Vida<br /> Home Care Personalizado para Você
                         </h3>
-                        <p className="text-base sm:text-xs md:text-sm xl:text-sm font-normal text-black mt-3 text-justify leading-8">
-                            Oferecemos cuidados personalizados no conforto do seu lar, com uma equipe multidisciplinar especializada.
-                            Garantimos segurança, qualidade de vida e atenção humanizada, promovendo o bem-estar que você e sua família merecem.
+                        <p className="text-base font-normal text-black mt-3 leading-6 text-justify">
+                            Oferecemos cuidados personalizados no conforto do seu lar, com uma equipe multidisciplinar
+                            especializada. Garantimos segurança, qualidade de vida e atenção humanizada, promovendo o
+                            bem-estar que você e sua família merecem.
                         </p>
                         <div className="mt-3 flex justify-start items-center gap-5">
                             <a
@@ -60,7 +67,7 @@ export default function HomeCare() {
                     </div>
                     <div className="mt-10 md:mt-0 hidden md:block">
                         <Image
-                            src="/enfermeirahomecare.webp"
+                            src="/equipe_medica.jpeg"
                             width={1500}
                             height={1500}
                             className="rounded-2xl object-cover img-thumbnail"
@@ -70,15 +77,14 @@ export default function HomeCare() {
                     </div>
                 </div>
             </section>
-            <section className="max-w-7xl mx-auto py-4 sm:py-4 md:py-12 px-4 sm:px-6 lg:px-8 bg-[#25a197] rounded-lg">
-                <h4 className="text-xl sm:text-xl lg:text-2xl font-bold text-white mb-3 text-center md:text-left">
+            <section className="max-w-7xl mx-auto py-4 mb-2 px-4 bg-[#25a197] rounded-lg">
+                <h4 className="text-sm sm:text-base md:text-xl lg:text-2xl font-bold text-white mb-2 text-center">
                     Por que escolher nosso Home Care?
                 </h4>
-                <p className="text-sm sm:text-sm md:text-sm lg:text-sm xl:text-sm text-white mb-4 text-justify md:text-left leading-7">
-                    Escolha nosso home care para receber cuidados especializados no conforto do seu lar. Nossa equipe dedicada
-                    prioriza seu bem-estar, oferecendo segurança, atenção humanizada e qualidade de vida para você e sua família.
+                <p className="text-sm sm:text-sm md:text-sm lg:text-sm text-white mb-3 text-justify leading-5 md:leading-6 lg:leading-6">
+                Optar pelos nossos serviços é assegurar um cuidado personalizado e de alta qualidade no conforto de sua residência. Nossa equipe, composta por profissionais altamente qualificados, oferece atendimento especializado com foco na saúde e bem-estar do paciente. Utilizamos tecnologias avançadas para monitoramento contínuo, garantindo assim segurança e eficiência. Com flexibilidade e atenção, proporcionamos um atendimento humanizado e confiável. Ao escolher nossos serviços, você assegura um atendimento que prioriza seu bem-estar e qualidade de vida. Contamos com uma equipe de profissionais qualificados, que oferecem cuidados de saúde de excelência, sempre priorizando a segurança e o bem-estar do paciente no ambiente familiar, com um atendimento acolhedor e de total confiança.
                 </p>
-                <ul className="text-sm sm:text-sm list-disc list-inside text-white space-y-3 sm:space-y-3 lg:space-y-3">
+                <ul className="list-disc list-inside text-sm text-white space-y-2 font-semibold">
                     <li>Equipe multidisciplinar</li>
                     <li>Administração de medicamentos</li>
                     <li>Seguro de vida (Porto Seguro)</li>
@@ -86,54 +92,71 @@ export default function HomeCare() {
                     <li>Atendimento em todo território Nacional</li>
                 </ul>
             </section>
-
-            {/* Planos */}
-            <section id="planos" className="pt-4 pb-8">
-                <h2 className="text-center text-xl sm:text-2xl lg:text-3xl font-semibold leading-relaxed">
+            <section id="planos" className="mt-4 pb-4 bg-white">
+                <h2 className="text-center text-3xl font-semibold leading-relaxed">
                     Conheça Nossos Planos
                 </h2>
-                <p className="text-center mt-2 text-sm sm:text-base">Confira cada serviço em cada plano</p>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto p-4 sm:p-6 lg:p-8">
+                <p className="text-center mt-0 text-sm">
+                    Confira cada serviço em cada plano
+                </p>
+                <Swiper
+                    modules={[Navigation, Pagination, Autoplay]}
+                    slidesPerView={1}
+                    spaceBetween={30}
+                    navigation
+                    pagination={{ clickable: true }}
+                    autoplay={{ delay: 5000, disableOnInteraction: false }}
+                    breakpoints={{
+                        640: { slidesPerView: 1 },
+                        768: { slidesPerView: 2 },
+                        1024: { slidesPerView: 2 },
+                        1025: { slidesPerView: 3 },
+                    }}
+                    className="max-w-7xl mx-auto p-4 relative"
+                >
                     {plans.map((plan, index) => (
-                        <div
-                            key={index}
-                            className="w-full max-w-sm bg-white border border-gray-200 rounded-2xl shadow-lg flex flex-col"
-                        >
-                            <h5 className="uppercase mb-3 text-xl bg-[#10c4b5] text-white font-semibold p-6">
-                                {plan.title}
-                            </h5>
-                            <div className="flex items-baseline text-black font-bold justify-center">
-                                <span className="text-sm font-semibold -translate-y-5">R$</span>
-                                <span className="text-5xl font-extrabold tracking-tight">{plan.price}</span>
-                                <span className="text-sm font-semibold -translate-y-5">,99</span>
-                                <span className="ml-1 text-sm font-normal text-black">/mês</span>
+                        <SwiperSlide key={index} className="h-full">
+                            <div className="w-full max-w-sm bg-white border border-gray-200 rounded-2xl shadow-lg flex flex-col min-h-[500px]">
+                                <h5 className="uppercase text-left mb-3 text-xl bg-[#10c4b5] text-white font-semibold p-4 sm:mb-4 md:text-base lg:p-8 xl:text-xl 2xl:mb-3 2xl:text-lg">
+                                    {plan.title}
+                                </h5>
+                                <div className="flex items-baseline text-black font-bold justify-center my-2">
+                                    <span className="text-sm font-semibold -translate-y-5">R$</span>
+                                    <span className="text-5xl font-extrabold tracking-tight">
+                                        {plan.price}
+                                    </span>
+                                    <span className="text-sm font-semibold -translate-y-5">,99</span>
+                                    <span className="ml-1 text-sm font-normal text-black">/mês</span>
+                                </div>
+                                <ul className="flex-grow flex flex-col justify-center my-0 space-y-5 mb-0 px-6">
+                                    {plan.features.map((feature, idx) => (
+                                        <li key={idx} className="flex items-center">
+                                            <svg
+                                                className="w-4 h-4 text-[#10c4b5]"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                fill="currentColor"
+                                                viewBox="0 0 20 20"
+                                            >
+                                                <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                                            </svg>
+                                            <span className="ml-3 text-sm font-normal text-black">
+                                                {feature}
+                                            </span>
+                                        </li>
+                                    ))}
+                                </ul>
+                                <div className="mt-auto">
+                                    <Link
+                                        href={`/precadastro_homecare`}
+                                        className="block text-center w-full px-5 py-3 text-sm font-medium text-white bg-[#10c4b5] rounded-b-2xl"
+                                    >
+                                        Contratar Plano
+                                    </Link>
+                                </div>
                             </div>
-                            <ul role="list" className="my-7 space-y-4 flex-grow px-6">
-                                {plan.features.map((feature, idx) => (
-                                    <li key={idx} className="flex items-center text-center justify-center">
-                                        <svg
-                                            className="w-4 h-4 text-[#10c4b5]"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            fill="currentColor"
-                                            viewBox="0 0 20 20"
-                                        >
-                                            <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
-                                        </svg>
-                                        <span className="ml-3 text-base font-normal text-black border-t-2 py-1">
-                                            {feature}
-                                        </span>
-                                    </li>
-                                ))}
-                            </ul>
-                            <Link
-                                href={`/precadastro_homecare`}
-                                className="mt-auto text-center w-full px-5 py-3 text-sm font-medium text-white bg-[#10c4b5]"
-                            >
-                                Contratar Plano
-                            </Link>
-                        </div>
+                        </SwiperSlide>
                     ))}
-                </div>
+                </Swiper>
             </section>
         </>
     );

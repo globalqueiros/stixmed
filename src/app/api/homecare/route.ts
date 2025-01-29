@@ -81,7 +81,7 @@ export async function POST(req: Request) {
 
         return NextResponse.json({
             success: true,
-            message: 'Pré-cadastro realizado com sucesso! Aguarde nosso contato.',
+            message: 'Pré-cadastro realizado com sucesso! Nosso atendente entrará em contato em até 4 dias.',
         });
     } catch (error) {
         console.error(error);
