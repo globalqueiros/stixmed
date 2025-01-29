@@ -25,7 +25,7 @@ export default function CookieBanner() {
             <div className="max-w-7xl mx-auto flex flex-col sm:flex-row sm:justify-between sm:items-center">
                 <div className="mb-4 sm:mb-0 sm:pr-6 mr-0">
                     <header className="text-base sm:text-lg font-bold mb-2">Aviso de Cookie</header>
-                    <p className="max-w-3xl text-xs sm:text-sm lg:text-sm md:text-xs text-justify my-0 leading-5 text-white">
+                    <p className="max-w-3xl text-xs sm:text-sm lg:text-sm md:text-xs text-justify my-0 leading-7 text-white">
                         Nós armazenamos dados temporariamente para melhorar a sua experiência
                         de navegação e recomendar conteúdo de seu interesse. Ao utilizar
                         nossos serviços, você concorda com tal monitoramento.
@@ -37,7 +37,7 @@ export default function CookieBanner() {
                         onClick={handleClose}
                         aria-label="Aceitar e fechar aviso de cookies"
                     >
-                        Compreendo
+                        Concordo
                     </button>
                     <a
                         href="/politica_privacidade"

@@ -6,6 +6,7 @@ import Navbar from "../components/Navbar/page";
 import Cookie from "../components/Cookie/page";
 import Footer from "../components/Footer/page";
 import Bloqueio from "../components/Bloqueio/page";
+import Libra from "../components/Libras/page";
 
 export const metadata: Metadata = {
   title: "Stixmed | Consultas online e home care",
@@ -23,6 +24,7 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </head>
       <body>
+        <Libra />
         <Bloqueio />
         <Navbar />
         {children}

@@ -932,39 +932,6 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
 }
-.bg-\[linear-gradient\(287\.38deg\2c _\#00498A_0\%\2c _\#0062B8_100\%\)\] {
-  background-image: linear-gradient(287.38deg, #00498A 0%, #0062B8 100%);
-}
-.bg-\[linear-gradient\(287\.38deg\2c _\#10c4b5_0\%\2c _\#0062B8_100\%\)\] {
-  background-image: linear-gradient(287.38deg, #10c4b5 0%, #0062B8 100%);
-}
-.bg-\[linear-gradient\(287\.38deg\2c _\#10c4b5_0\%\2c _\#00a2596\%\)\] {
-  background-image: linear-gradient(287.38deg, #10c4b5 0%, #00a2596%);
-}
-.bg-\[linear-gradient\(287\.38deg\2c _\#10c4b5_0\%\2c _\#\%\)\] {
-  background-image: linear-gradient(287.38deg, #10c4b5 0%, #%);
-}
-.bg-\[linear-gradient\(287\.38deg\2c _\#10c4b5_0\%\2c _\#25a096\%\)\] {
-  background-image: linear-gradient(287.38deg, #10c4b5 0%, #25a096%);
-}
-.bg-\[linear-gradient\(287\.38deg\2c _\#10c4b5_0\%\2c _\#\#036316\%\)\] {
-  background-image: linear-gradient(287.38deg, #10c4b5 0%, ##036316%);
-}
-.bg-\[linear-gradient\(287\.38deg\2c _\#10c4b5_0\%\2c _\#036316\%\)\] {
-  background-image: linear-gradient(287.38deg, #10c4b5 0%, #036316%);
-}
-.bg-\[linear-gradient\(287\.38deg\2c _\#10c4b5_0\%\2c _\#036316100\%\)\] {
-  background-image: linear-gradient(287.38deg, #10c4b5 0%, #036316100%);
-}
-.bg-\[linear-gradient\(287\.38deg\2c _\#10c4b5_0\%\2c _\#\#036316_100\%\)\] {
-  background-image: linear-gradient(287.38deg, #10c4b5 0%, ##036316 100%);
-}
-.bg-\[linear-gradient\(287\.38deg\2c _\#10c4b5_0\%\2c _\#036316_100\%\)\] {
-  background-image: linear-gradient(287.38deg, #10c4b5 0%, #036316 100%);
-}
-.bg-\[linear-gradient\(287\.38deg\2c _\#10c4b5_0\%\2c _\#25a096_100\%\)\] {
-  background-image: linear-gradient(287.38deg, #10c4b5 0%, #25a096 100%);
-}
 .bg-\[linear-gradient\(287\.38deg\2c _\#06786f_0\%\2c _\#25a096_100\%\)\] {
   background-image: linear-gradient(287.38deg, #06786f 0%, #25a096 100%);
 }
@@ -1153,9 +1120,6 @@ video {
 }
 .leading-7 {
   line-height: 1.75rem;
-}
-.leading-8 {
-  line-height: 2rem;
 }
 .leading-relaxed {
   line-height: 1.625;
@@ -1648,11 +1612,6 @@ input[name] {
     line-height: 1;
   }
 
-  .lg\:text-base {
-    font-size: 1rem;
-    line-height: 1.5rem;
-  }
-
   .lg\:text-sm {
     font-size: 0.875rem;
     line-height: 1.25rem;
@@ -1661,10 +1620,6 @@ input[name] {
   .lg\:text-xs {
     font-size: 0.75rem;
     line-height: 1rem;
-  }
-
-  .lg\:leading-5 {
-    line-height: 1.25rem;
   }
 
   .lg\:leading-6 {
