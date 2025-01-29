@@ -8,6 +8,7 @@ export default function CartaoStixmed() {
             title: "Ps Digital",
             price: 58,
             features: [
+                "5 Consulta por mês",
                 "Vídeo consulta com clínico geral 24hrs por dia",
                 "Sem limite de uso e sem carência",
                 "Atendimento em todo território Nacional",
@@ -19,11 +20,11 @@ export default function CartaoStixmed() {
             title: "Ps Digital Master",
             price: 86,
             features: [
+                "20 Consulta por mês",
                 "Cartão Stixmed",
                 "Vídeo consulta com clínico geral 24hrs por dia",
                 "Sem limite de uso e sem carência",
                 "Atendimento em todo território Nacional",
-                "Atendimento com ambulância em caso de emergência e urgência",
                 "Seguro de vida (Porto Seguro)"
             ],
             unavailableFeatures: [
@@ -33,12 +34,12 @@ export default function CartaoStixmed() {
             title: "PS Premium",
             price: 105,
             features: [
+                "Consulta ilimitada",
                 "Cartão Stixmed",
                 "Vídeo consulta com clínico geral 24hrs por dia",
                 "Sem limite de uso e sem carência",
                 "Atendimento em todo território Nacional",
                 "Atendimento com ambulância em caso de emergência e urgência",
-                "Remoção em caso de home care",
                 "Seguro de vida (Porto Seguro)"
             ],
             unavailableFeatures: [

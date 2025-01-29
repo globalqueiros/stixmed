@@ -13,6 +13,7 @@ export default function Planos() {
             title: "Home Básico",
             price: 329,
             features: [
+                "15 Consulta por mês",
                 "Remoção do Paciente",
                 "Equipe Multidisciplinar",
                 "Atendimento em todo território Nacional",
@@ -22,6 +23,7 @@ export default function Planos() {
             title: "Home Master",
             price: 578,
             features: [
+                "20 Consulta por mês",
                 "Remoção do Paciente",
                 "Equipe Multidisciplinar",
                 "Atendimento com ambulância em emergências e urgências",
@@ -33,6 +35,7 @@ export default function Planos() {
             title: "Home Premium",
             price: 859,
             features: [
+                "Consulta ilimitada",
                 "Remoção do Paciente",
                 "Equipe Multidisciplinar",
                 "Administração de medicamentos",
