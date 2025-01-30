@@ -3,6 +3,8 @@ import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import style from './styles.module.css';
 import Link from 'next/link';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUser } from "@fortawesome/free-solid-svg-icons";
 
 const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -47,6 +49,7 @@ const Navbar = () => {
                             <Link href="/cartao_stixmed" className="text-white p-2">Cartão Stixmed</Link>
                             <Link href="/home_care" className="text-white p-2">Home Care</Link>
                             <Link href="/contato" className="text-white p-2">Contato</Link>
+                            <Link href="https://paciente.stixmed.med.br" className="border rounded-full text-white flex btn text-sm"><div className='pl-3 pr-3'><FontAwesomeIcon icon={faUser} className="mr-2 mt-1" /> Acessar</div></Link>
                         </div>
                     </div>
                     <div className="md:hidden flex items-center">
@@ -88,6 +91,7 @@ const Navbar = () => {
                         <Link href="/cartao_stixmed" className="text-white flex p-2">Cartão Stixmed</Link>
                         <Link href="/home_care" className="text-white flex p-2">Home Care</Link>
                         <Link href="/contato" className="text-white flex p-2">Contato</Link>
+                        <Link href="https://paciente.stixmed.med.br" className="border rounded-full text-white flex btn text-base pl-4 pr-4"><FontAwesomeIcon icon={faUser} className="mr-2 mt-1" /> Acessar</Link>
                     </div>
                 </div>
             )}

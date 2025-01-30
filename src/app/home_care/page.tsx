@@ -63,8 +63,8 @@ export default function Planos() {
                     <div className="mt-10 md:mt-0 hidden lg:block">
                         <Image
                             src="/equipe_medica.jpeg"
-                            width={1500}
-                            height={1500}
+                            width={1300}
+                            height={1300}
                             className="rounded-2xl object-cover img-thumbnail"
                             alt="Enfermeira"
                             priority

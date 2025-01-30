@@ -543,9 +543,6 @@ video {
 .relative {
   position: relative;
 }
-.inset-0 {
-  inset: 0px;
-}
 .bottom-0 {
   bottom: 0px;
 }
@@ -557,9 +554,6 @@ video {
 }
 .m-auto {
   margin: auto;
-}
-.m-3 {
-  margin: 0.75rem;
 }
 .mx-10 {
   margin-left: 2.5rem;
@@ -623,6 +617,9 @@ video {
 .mr-0 {
   margin-right: 0px;
 }
+.mr-1 {
+  margin-right: 0.25rem;
+}
 .mr-10 {
   margin-right: 2.5rem;
 }
@@ -656,11 +653,8 @@ video {
 .mt-auto {
   margin-top: auto;
 }
-.mt-5 {
-  margin-top: 1.25rem;
-}
-.mr-1 {
-  margin-right: 0.25rem;
+.mr-4 {
+  margin-right: 1rem;
 }
 .block {
   display: block;
@@ -727,9 +721,6 @@ video {
 }
 .max-w-sm {
   max-width: 24rem;
-}
-.max-w-md {
-  max-width: 28rem;
 }
 .flex-shrink-0 {
   flex-shrink: 0;
@@ -799,9 +790,6 @@ video {
 .gap-4 {
   gap: 1rem;
 }
-.gap-5 {
-  gap: 1.25rem;
-}
 .gap-6 {
   gap: 1.5rem;
 }
@@ -855,6 +843,11 @@ video {
   margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(1.5rem * var(--tw-space-y-reverse));
 }
+.space-x-3 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(0.75rem * var(--tw-space-x-reverse));
+  margin-left: calc(0.75rem * calc(1 - var(--tw-space-x-reverse)));
+}
 .overflow-x-auto {
   overflow-x: auto;
 }
@@ -876,18 +869,12 @@ video {
 .rounded-xl {
   border-radius: 0.75rem;
 }
-.rounded {
-  border-radius: 0.25rem;
-}
 .rounded-b-2xl {
   border-bottom-right-radius: 1rem;
   border-bottom-left-radius: 1rem;
 }
 .border {
   border-width: 1px;
-}
-.border-2 {
-  border-width: 2px;
 }
 .border-t-2 {
   border-top-width: 2px;
@@ -940,17 +927,6 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
 }
-.bg-black {
-  --tw-bg-opacity: 1;
-  background-color: rgb(0 0 0 / var(--tw-bg-opacity, 1));
-}
-.bg-blue-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(59 130 246 / var(--tw-bg-opacity, 1));
-}
-.bg-opacity-50 {
-  --tw-bg-opacity: 0.5;
-}
 .bg-\[linear-gradient\(287\.38deg\2c _\#06786f_0\%\2c _\#25a096_100\%\)\] {
   background-image: linear-gradient(287.38deg, #06786f 0%, #25a096 100%);
 }
@@ -965,9 +941,6 @@ video {
 }
 .p-4 {
   padding: 1rem;
-}
-.p-6 {
-  padding: 1.5rem;
 }
 .px-0 {
   padding-left: 0px;
@@ -1047,6 +1020,12 @@ video {
 .pl-3 {
   padding-left: 0.75rem;
 }
+.pl-4 {
+  padding-left: 1rem;
+}
+.pr-4 {
+  padding-right: 1rem;
+}
 .pt-2 {
   padding-top: 0.5rem;
 }
@@ -1056,8 +1035,14 @@ video {
 .pt-4 {
   padding-top: 1rem;
 }
-.pt-2\.5 {
-  padding-top: 0.625rem;
+.pr-2 {
+  padding-right: 0.5rem;
+}
+.pl-2 {
+  padding-left: 0.5rem;
+}
+.pr-3 {
+  padding-right: 0.75rem;
 }
 .text-left {
   text-align: left;
@@ -1134,6 +1119,9 @@ video {
 .leading-7 {
   line-height: 1.75rem;
 }
+.leading-8 {
+  line-height: 2rem;
+}
 .leading-relaxed {
   line-height: 1.625;
 }
@@ -1142,9 +1130,6 @@ video {
 }
 .leading-tight {
   line-height: 1.25;
-}
-.leading-8 {
-  line-height: 2rem;
 }
 .tracking-tight {
   letter-spacing: -0.025em;
@@ -1189,14 +1174,6 @@ video {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
 }
-.text-red-500 {
-  --tw-text-opacity: 1;
-  color: rgb(239 68 68 / var(--tw-text-opacity, 1));
-}
-.text-blue-500 {
-  --tw-text-opacity: 1;
-  color: rgb(59 130 246 / var(--tw-text-opacity, 1));
-}
 .underline {
   text-decoration-line: underline;
 }
@@ -1224,9 +1201,6 @@ video {
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
-}
-.duration-300 {
-  transition-duration: 300ms;
 }
 
 :root {
@@ -1321,11 +1295,6 @@ input[name] {
   font-size: 15px;
 }
 
-.hover\:bg-\[\#0ea598\]:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(14 165 152 / var(--tw-bg-opacity, 1));
-}
-
 .hover\:bg-\[\#186f65\]:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(24 111 101 / var(--tw-bg-opacity, 1));
@@ -1344,10 +1313,6 @@ input[name] {
 .hover\:text-white:hover {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
-}
-
-.hover\:underline:hover {
-  text-decoration-line: underline;
 }
 
 .focus\:outline-none:focus {
@@ -1383,10 +1348,6 @@ input[name] {
 
   .sm\:mb-4 {
     margin-bottom: 1rem;
-  }
-
-  .sm\:mt-3 {
-    margin-top: 0.75rem;
   }
 
   .sm\:max-w-md {
@@ -1464,10 +1425,6 @@ input[name] {
   .sm\:text-xl {
     font-size: 1.25rem;
     line-height: 1.75rem;
-  }
-
-  .sm\:leading-6 {
-    line-height: 1.5rem;
   }
 
   .sm\:leading-7 {
@@ -1575,10 +1532,6 @@ input[name] {
     line-height: 1.5rem;
   }
 
-  .md\:leading-7 {
-    line-height: 1.75rem;
-  }
-
   .md\:text-white {
     --tw-text-opacity: 1;
     color: rgb(255 255 255 / var(--tw-text-opacity, 1));
@@ -1594,10 +1547,6 @@ input[name] {
 
   .lg\:mr-0 {
     margin-right: 0px;
-  }
-
-  .lg\:mt-0 {
-    margin-top: 0px;
   }
 
   .lg\:block {
@@ -1660,19 +1609,14 @@ input[name] {
     line-height: 1.25rem;
   }
 
-  .lg\:text-xs {
-    font-size: 0.75rem;
-    line-height: 1rem;
-  }
-
   .lg\:text-xl {
     font-size: 1.25rem;
     line-height: 1.75rem;
   }
 
-  .lg\:text-base {
-    font-size: 1rem;
-    line-height: 1.5rem;
+  .lg\:text-xs {
+    font-size: 0.75rem;
+    line-height: 1rem;
   }
 
   .lg\:leading-6 {
@@ -1695,23 +1639,6 @@ input[name] {
     max-width: 42rem;
   }
 
-  .xl\:max-w-7xl {
-    max-width: 80rem;
-  }
-
-  .xl\:max-w-xl {
-    max-width: 36rem;
-  }
-
-  .xl\:max-w-5xl {
-    max-width: 64rem;
-  }
-
-  .xl\:text-xl {
-    font-size: 1.25rem;
-    line-height: 1.75rem;
-  }
-
   .xl\:text-2xl {
     font-size: 1.5rem;
     line-height: 2rem;
@@ -1727,14 +1654,9 @@ input[name] {
     line-height: 1.25rem;
   }
 
-  .xl\:text-lg {
-    font-size: 1.125rem;
+  .xl\:text-xl {
+    font-size: 1.25rem;
     line-height: 1.75rem;
-  }
-
-  .xl\:text-3xl {
-    font-size: 1.875rem;
-    line-height: 2.25rem;
   }
 
   .xl\:leading-6 {
@@ -1761,8 +1683,9 @@ input[name] {
     max-width: 72rem;
   }
 
-  .\32xl\:max-w-5xl {
-    max-width: 64rem;
+  .\32xl\:text-3xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
   }
 
   .\32xl\:text-lg {
@@ -1775,29 +1698,9 @@ input[name] {
     line-height: 1.25rem;
   }
 
-  .\32xl\:text-3xl {
-    font-size: 1.875rem;
-    line-height: 2.25rem;
-  }
-
-  .\32xl\:text-5xl {
-    font-size: 3rem;
-    line-height: 1;
-  }
-
   .\32xl\:text-xl {
     font-size: 1.25rem;
     line-height: 1.75rem;
-  }
-
-  .\32xl\:text-2xl {
-    font-size: 1.5rem;
-    line-height: 2rem;
-  }
-
-  .\32xl\:text-4xl {
-    font-size: 2.25rem;
-    line-height: 2.5rem;
   }
 
   .\32xl\:leading-6 {
