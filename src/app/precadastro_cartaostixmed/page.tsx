@@ -18,8 +18,8 @@ const CadastroForm = () => {
   const [message, setMessage] = useState('');
   const [alertType, setAlertType] = useState<'success' | 'danger' | ''>('');
   const [isRecaptchaVerified, setIsRecaptchaVerified] = useState(false);
+  const [aceitouPolitica, setAceitouPolitica] = useState(false);
 
-  // Função para validar CPF
   const isValidCPF = (cpf: string) => {
     cpf = cpf.replace(/[^\d]/g, '');
     if (cpf.length !== 11 || /^(\d)\1+$/.test(cpf)) return false;
@@ -37,7 +37,6 @@ const CadastroForm = () => {
     return resto === Number(cpf[10]);
   };
 
-  // Função para validar WhatsApp
   const isValidWhatsApp = (whatsapp: string) => {
     const regex = /^\(\d{2}\) \d{4,5}-\d{4}$/;
     return regex.test(whatsapp);
@@ -83,6 +82,10 @@ const CadastroForm = () => {
     }
   };
 
+  const handlePoliticaChange = () => {
+    setAceitouPolitica((prev) => !prev);
+  };
+
   const handleRecaptchaChange = (value: string | null) => {
     setIsRecaptchaVerified(!!value);
   };
@@ -93,6 +96,11 @@ const CadastroForm = () => {
     if (!isRecaptchaVerified) {
       setMessage('Por favor, verifique o ReCAPTCHA.');
       setAlertType('danger');
+      return;
+    }
+
+    if (!aceitouPolitica) {
+      setMessage('Você deve aceitar os termos de uso e a política de privacidade.');
       return;
     }
 
@@ -153,66 +161,66 @@ const CadastroForm = () => {
         )}
       </div>
       <form onSubmit={handleSubmit} className="mx-auto space-y-4">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-6">
-            <div>
-              <label>Nome *</label>
-              <input
-                type="text"
-                name="nome"
-                value={formData.nome}
-                onChange={handleChange}
-                placeholder="Nome completo..."
-                className="w-full border rounded-2xl px-4 py-2 capitalize text-sm"
-                required
-              />
-            </div>
-            <div>
-              <label>Data de Nascimento *</label>
-              <input
-                type="date"
-                name="data_nascimento"
-                value={formData.data_nascimento}
-                onChange={handleChange}
-                className="w-full border rounded-2xl px-4 py-2 text-sm"
-                required
-              />
-            </div>
-            <div>
-              <label>CPF *</label>
-              <input
-                type="text"
-                name="cpf"
-                value={formData.cpf}
-                onChange={handleCpfChange}
-                required
-                className="w-full border rounded-2xl px-4 py-2 text-sm"
-                placeholder="123.456.789-09"
-              />
-            </div>
-            <div>
-              <label>WhatsApp *</label>
-              <input
-                type="text"
-                name="whatsapp"
-                value={formData.whatsapp}
-                onChange={handleWhatsappChange}
-                placeholder="(00) 00000-0000"
-                className="w-full border rounded-2xl px-4 py-2 text-sm"
-                required
-              />
-            </div>
-            <div>
-              <label>Email *</label>
-              <input
-                type="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                className="w-full border rounded-2xl px-4 py-2 text-sm"
-                placeholder="seuemail@gmail.com"
-                required
-              />
-            </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-6">
+          <div>
+            <label>Nome *</label>
+            <input
+              type="text"
+              name="nome"
+              value={formData.nome}
+              onChange={handleChange}
+              placeholder="Nome completo..."
+              className="w-full border rounded-2xl px-4 py-2 capitalize text-sm"
+              required
+            />
+          </div>
+          <div>
+            <label>Data de Nascimento *</label>
+            <input
+              type="date"
+              name="data_nascimento"
+              value={formData.data_nascimento}
+              onChange={handleChange}
+              className="w-full border rounded-2xl px-4 py-2 text-sm"
+              required
+            />
+          </div>
+          <div>
+            <label>CPF *</label>
+            <input
+              type="text"
+              name="cpf"
+              value={formData.cpf}
+              onChange={handleCpfChange}
+              required
+              className="w-full border rounded-2xl px-4 py-2 text-sm"
+              placeholder="123.456.789-09"
+            />
+          </div>
+          <div>
+            <label>WhatsApp *</label>
+            <input
+              type="text"
+              name="whatsapp"
+              value={formData.whatsapp}
+              onChange={handleWhatsappChange}
+              placeholder="(00) 00000-0000"
+              className="w-full border rounded-2xl px-4 py-2 text-sm"
+              required
+            />
+          </div>
+          <div>
+            <label>Email *</label>
+            <input
+              type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              className="w-full border rounded-2xl px-4 py-2 text-sm"
+              placeholder="seuemail@gmail.com"
+              required
+            />
+          </div>
           <div>
             <label>Plano *</label>
             <select
@@ -250,7 +258,7 @@ const CadastroForm = () => {
                 onChange={handleIndicacaoChange}
                 className="mr-2 cursor-pointer"
               />
-              <label htmlFor="indicacao" className="text-sm cursor-pointer">
+              <label htmlFor="indicacao" className="text-sm cursor-pointer mt-2">
                 Não tem indicação
               </label>
             </div>
@@ -272,6 +280,19 @@ const CadastroForm = () => {
             sitekey='6LeOxZwqAAAAABqDVmyHKfo-uaIeQY1YGntVRbCb'
             onChange={handleRecaptchaChange}
           />
+        </div>
+        <div className="flex items-center mt-3 space-x-2">
+          <input
+            type="checkbox"
+            id="politicatermo"
+            checked={aceitouPolitica}
+            onChange={handlePoliticaChange}
+            className="cursor-pointer"
+            aria-labelledby="politicatermo-label"
+          />
+          <label htmlFor="politicatermo" id="politicatermo-label" className="text-sm cursor-pointer flex items-center font-normal mt-2">
+            Concordo com os <strong className="ml-1 mr-1">termos de uso</strong> e <strong className="ml-1 mr-1">política de privacidade</strong>.
+          </label>
         </div>
         <button type="submit" className="text-sm text-white font-semibold rounded-full px-5 py-2 bg-[#25a096]">
           Cadastrar

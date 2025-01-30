@@ -140,7 +140,6 @@ export default function Contato() {
                     o.async=1;o.src=g;m=s.getElementsByTagName(a)[0];m.parentNode.insertBefore(o,m); 
                 })(window,document,'script','https://js.huggy.chat/widget.min.js','pwz');`}
             </Script>
-
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 w-full max-w-7xl m-auto pt-4 pb-4 px-4">
                 <div>
                     <h3 className="text-xl font-semibold text-center">Entre em contato com a gente!</h3>
@@ -152,20 +151,16 @@ export default function Contato() {
                         width={500}
                         height={500}
                         alt="Mulher de Call Center"
-                        className="rounded-2xl img-thumbnail"
+                        className="rounded-2xl img-thumbnail m-auto"
                     />
                     <div className="py-3 space-y-2">
                         <h3 className='text-base font-semibold'>Telefones de Urgência e Emergência</h3>
-                        <h5 className='text-base'>
-                            <Link href="tel:+08000000000" className='text-black text-sm'>
-                                <FontAwesomeIcon icon={faPhone} /> 0800 000 0000
-                            </Link>
-                        </h5>
-                        <h5 className='text-base'>
-                            <Link href="https://wa.me/5511000000000" target='_blank' className='text-black text-sm'>
-                                <FontAwesomeIcon icon={faWhatsapp} /> (11) 00000-0000
-                            </Link>
-                        </h5>
+                        <Link href="tel:+08000000000" className='text-black'>
+                            <FontAwesomeIcon icon={faPhone} /> <h5 className='text-base'>0800 000 0000</h5>
+                        </Link>
+                        <Link href="https://wa.me/5511911075279" target='_blank' className='text-black'>
+                            <FontAwesomeIcon icon={faWhatsapp} /> <h5 className='text-base'>(11) 91107-5279</h5>
+                        </Link>
                     </div>
                 </div>
                 <div>

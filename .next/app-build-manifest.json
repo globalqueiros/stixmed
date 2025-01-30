@@ -11,26 +11,21 @@
       "static/chunks/main-app.js",
       "static/chunks/app/not-found.js"
     ],
+    "/cartao_stixmed/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/cartao_stixmed/page.css",
+      "static/chunks/app/cartao_stixmed/page.js"
+    ],
+    "/_not-found/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/_not-found/page.js"
+    ],
     "/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/page.js"
-    ],
-    "/sobre_nos/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/sobre_nos/page.css",
-      "static/chunks/app/sobre_nos/page.js"
-    ],
-    "/telemedicina/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/telemedicina/page.js"
-    ],
-    "/cartao_stixmed/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/cartao_stixmed/page.js"
     ],
     "/home_care/page": [
       "static/chunks/webpack.js",
@@ -38,10 +33,10 @@
       "static/css/app/home_care/page.css",
       "static/chunks/app/home_care/page.js"
     ],
-    "/contato/page": [
+    "/telemedicina/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/contato/page.js"
+      "static/chunks/app/telemedicina/page.js"
     ],
     "/politica_privacidade/page": [
       "static/chunks/webpack.js",
@@ -57,6 +52,11 @@
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/precadastro_cartaostixmed/page.js"
+    ],
+    "/api/homecare/route": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/api/homecare/route.js"
     ]
   }
 }

@@ -52,23 +52,15 @@ export default function Planos() {
                 <div className="flex flex-col md:flex-row justify-around items-center max-w-7xl mx-auto px-4">
                     <div className="flex flex-col items-start justify-start md:ml-20 mx-4">
                         <h3 className="m-auto text-center font-bold text-xl md:text-lg lg:text-2xl text-black leading-snug">
-                            Cuidados Que Transformam Vida<br /> Home Care Personalizado para Você
+                            Cuidados Que Transformam Vida Home Care Personalizado para Você
                         </h3>
                         <p className="text-base font-normal text-black mt-3 leading-6 text-justify">
                             Oferecemos cuidados personalizados no conforto do seu lar, com uma equipe multidisciplinar
                             especializada. Garantimos segurança, qualidade de vida e atenção humanizada, promovendo o
                             bem-estar que você e sua família merecem.
                         </p>
-                        <div className="mt-3 flex justify-start items-center gap-5">
-                            <a
-                                href="#planos"
-                                className="text-white font-semibold rounded-full px-5 py-2.5 bg-[#10c4b5] hover:bg-[#0ea598] transition duration-300"
-                            >
-                                Contratar Agora
-                            </a>
-                        </div>
                     </div>
-                    <div className="mt-10 md:mt-0 hidden md:block">
+                    <div className="mt-10 md:mt-0 hidden lg:block">
                         <Image
                             src="/equipe_medica.jpeg"
                             width={1500}

@@ -35,9 +35,10 @@ export default function Footer() {
                                     <FontAwesomeIcon
                                         icon={faInstagram}
                                         style={{
-                                            width: "1.4rem",
+                                            width: "1.1rem",
                                             color: "white",
                                             cursor: "pointer",
+                                            height: "1.1rem",
                                         }}
                                     />
                                 </Link>
@@ -49,9 +50,10 @@ export default function Footer() {
                                     <FontAwesomeIcon
                                         icon={faFacebook}
                                         style={{
-                                            width: "1.4rem",
+                                            width: "1.1rem",
                                             color: "white",
                                             cursor: "pointer",
+                                            height: "1.1rem",
                                         }}
                                     />
                                 </Link>
@@ -60,7 +62,7 @@ export default function Footer() {
                     </ul>
                 </div>
                 <div className="py-3 pb-1 pl-3 pb-2 sm:pl-0">
-                    <ul className='space-y-2'>
+                    <ul className='space-y-2 mb-2'>
                         <h5 className='text-white font-bold text-lg pb-1'>Institucional</h5>
                         <li className="text-sm"><Link href='/sobre_nos'>Sobre Nós</Link></li>
                         <li className="text-sm"><Link href='/telemedicina'>Telemedicina</Link></li>
@@ -69,10 +71,10 @@ export default function Footer() {
                     </ul>
                 </div>
                 <div className="py-3 pb-1 pl-3 pb-0 sm:pl-0">
-                    <ul className='space-y-2'>
+                    <ul className='space-y-2 mb-2'>
                         <h5 className='text-white font-bold text-lg pb-1'>Stixmed</h5>
                         <li className="text-sm"><Link href='/contato'>Contato</Link></li>
-                        <li className="text-sm"><Link href='https://paciente.stixmed.med.br/negociacao'>Portal de Negociação</Link></li>
+                        <li className="text-sm"><Link href='https://negociacao.stixmed.med.br'>Portal de Negociação</Link></li>
                         <li className="text-sm"><Link href='https://career.groupqueiros.com/'>Trabalhe Conosco</Link></li>
                     </ul>
                 </div>
@@ -81,7 +83,7 @@ export default function Footer() {
                 className="bg-white-50 w-full m-auto flex flex-col justify-center items-start py-2 px-3"
                 style={{ background: '#06786f' }}
             >
-                <p className="text-white min-w-4xl m-auto text-xs text-justify leading-relaxed pb-1">
+                <p className="text-white min-w-4xl m-auto text-xs text-justify leading-relaxed pb-2">
                     *A Stixmed não comercializa convênios, atuando exclusivamente no campo da medicina, com foco no Cartão Stixmed e nos serviços de Home Care.
                 </p>
             </div>

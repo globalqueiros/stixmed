@@ -17,6 +17,7 @@ const CadastroForm = () => {
   const [message, setMessage] = useState('');
   const [isRecaptchaVerified, setIsRecaptchaVerified] = useState(false);
   const [isNoIndicacao, setIsNoIndicacao] = useState(false);
+  const [aceitouPolitica, setAceitouPolitica] = useState(false);
 
   const isValidCPF = (cpf: string) => {
     cpf = cpf.replace(/[^\d]/g, '');
@@ -79,6 +80,10 @@ const CadastroForm = () => {
     setFormData({ ...formData, indicacao: e.target.checked ? 'Sem indicação' : '' });
   };
 
+  const handlePoliticaChange = () => {
+    setAceitouPolitica((prev) => !prev);
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!isRecaptchaVerified) {
@@ -88,6 +93,11 @@ const CadastroForm = () => {
 
     if (!isValidCPF(formData.cpf)) {
       setMessage('CPF inválido.');
+      return;
+    }
+
+    if (!aceitouPolitica) {
+      setMessage('Você deve aceitar os termos de uso e a política de privacidade.');
       return;
     }
 
@@ -255,6 +265,19 @@ const CadastroForm = () => {
             sitekey='6LeOxZwqAAAAABqDVmyHKfo-uaIeQY1YGntVRbCb'
             onChange={handleRecaptchaChange}
           />
+        </div>
+        <div className="flex items-center mt-3 space-x-2">
+          <input
+            type="checkbox"
+            id="politicatermo"
+            checked={aceitouPolitica}
+            onChange={handlePoliticaChange}
+            className="cursor-pointer"
+            aria-labelledby="politicatermo-label"
+          />
+          <label htmlFor="politicatermo" id="politicatermo-label" className="text-sm cursor-pointer flex items-center font-normal mt-2">
+            Concordo com os <strong className="ml-1 mr-1">termos de uso</strong> e <strong className="ml-1 mr-1">política de privacidade</strong>.
+          </label>
         </div>
         <button type="submit" className="text-sm text-white font-semibold rounded-full px-5 py-2 bg-[#25a096]">
           Cadastrar

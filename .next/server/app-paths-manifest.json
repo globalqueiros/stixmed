@@ -1,7 +1,7 @@
 {
+  "/page": "app/page.js",
   "/politica_privacidade/page": "app/politica_privacidade/page.js",
-  "/cartao_stixmed/page": "app/cartao_stixmed/page.js",
+  "/precadastro_cartaostixmed/page": "app/precadastro_cartaostixmed/page.js",
   "/precadastro_homecare/page": "app/precadastro_homecare/page.js",
-  "/telemedicina/page": "app/telemedicina/page.js",
-  "/precadastro_cartaostixmed/page": "app/precadastro_cartaostixmed/page.js"
+  "/cartao_stixmed/page": "app/cartao_stixmed/page.js"
 }
