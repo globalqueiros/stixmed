@@ -155,7 +155,10 @@ const CadastroForm = () => {
       </p>
       <div className="mt-3">
         {message && (
-          <div className={`alert rounder-full alert-${alertType}`} role="alert">
+          <div
+            className={`alert rounded-full ${message.toLowerCase().includes('sucesso') ? 'alert-success' : 'alert-danger'
+              } text-sm p-3`}
+          >
             {message}
           </div>
         )}
