@@ -1,5 +1,7 @@
 {
-  "/home_care/page": "app/home_care/page.js",
-  "/cartao_stixmed/page": "app/cartao_stixmed/page.js",
-  "/telemedicina/page": "app/telemedicina/page.js"
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/precadastro_homecare/page": "app/precadastro_homecare/page.js",
+  "/telemedicina/page": "app/telemedicina/page.js",
+  "/sobre_nos/page": "app/sobre_nos/page.js",
+  "/_not-found/page": "app/_not-found/page.js"
 }
