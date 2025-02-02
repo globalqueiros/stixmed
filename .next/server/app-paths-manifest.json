@@ -1,5 +1,4 @@
 {
-  "/api/cartao/route": "app/api/cartao/route.js",
-  "/precadastro_cartaostixmed/page": "app/precadastro_cartaostixmed/page.js",
-  "/telemedicina/page": "app/telemedicina/page.js"
+  "/telemedicina/page": "app/telemedicina/page.js",
+  "/_not-found/page": "app/_not-found/page.js"
 }

@@ -32,31 +32,22 @@ export default function Telemedicina() {
             </section>
             <section className='my-1'>
                 <div className="container flex flex-col md:flex-row justify-between max-w-6xl py-4 md:py-3 gap-y-5 mx-auto">
-                    <div className="flex flex-col justify-center items-center mx-1 sm:p-4 md:mr-10 md:p-4 lg:p-4 xl:p-4 2xl:p-4">
+                    <div className="md:mx-5 flex flex-col justify-center items-center mx-1 sm:p-4 md:mr-10 md:p-4 lg:p-4 xl:p-4 2xl:p-4">
                         <h2 className="text-2xl sm:text-center sm:text-3xl md:text-2xl lg:text-3xl xl:text-3xl 2xl:text-3xl font-bold text-black-900 leading-8">Faça consultas online na Stixmed</h2>
-                        <p className="text-sm sm:text-sm md:text-sm lg:text-sm xl:text-sm 2xl:text-sm text-justify leading-6 my-2">Com nosso serviço de telemedicina, você tem a comodidade de consultar médicos de diversas especialidades de forma rápida e prática, através de videochamadas. Essa solução permite que você receba atendimento de qualidade sem sair de casa, proporcionando um cuidado médico eficiente e seguro, com a flexibilidade de ser atendido no seu tempo e no seu lugar.</p>
+                        <p className="text-sm sm:text-sm md:text-sm lg:text-sm xl:text-sm 2xl:text-sm text-justify leading-7 my-2">Com nosso serviço de telemedicina, você tem a comodidade de consultar médicos de diversas especialidades de forma rápida e prática, através de videochamadas. Essa solução permite que você receba atendimento de qualidade sem sair de casa, proporcionando um cuidado médico eficiente e seguro, com a flexibilidade de ser atendido no seu tempo e no seu lugar.</p>
                     </div>
                     <div className="sm:ml-5 mx-auto md:mx-0">
                         <Image
                             src="/chamada_telemedicina.png"
-                            width={1500}
-                            height={1500}
+                            width={1300}
+                            height={1300}
                             className="shadow-lg img-thumbnail"
                             style={{ borderRadius: '3vh' }}
                             alt="Médico"
                         />
                     </div>
                 </div>
-                <div className="container flex flex-col md:flex-row justify-between max-w-6xl py-4 md:py-3 gap-y-10 mx-auto">
-                    <div className="mx-5 lg:block hidden md:mr-10">
-                        <h2 className="text-xl lg:text-xl font-bold text-black-900 mb-3">Agora, cuidar da sua saúde ficou ainda mais fácil</h2>
-                        <p className="text-xl md:text-sm text-justify leading-7">
-                            Com a telemedicina da Stixmed, você tem acesso a consultas de qualidade com especialistas, sem sair de casa. Nossa plataforma oferece um atendimento rápido e seguro, disponível 24h por dia, todos os dias, garantindo comodidade e cuidado quando você precisar.
-                        </p>
-                        <p className="text-xl md:text-sm text-justify leading-7 mt-2">
-                            Sua consulta será realizada por um clínico geral ou pediatra, caso precise de atendimento imediato, garantindo que você receba a atenção necessária sempre que necessário. Nossa missão é proporcionar saúde com praticidade, confiança e excelência, para que você se sinta seguro e amparado em qualquer momento.
-                        </p>
-                    </div>
+                <div className="container flex flex-col md:flex-row justify-between max-w-6xl py-4 md:py-3 gap-y-5 mx-auto">
                     <div className="mx-auto md:mx-0">
                         <Image
                             src="/telemedicina.jpg"
@@ -67,24 +58,24 @@ export default function Telemedicina() {
                             alt="Médico"
                         />
                     </div>
-                    <div className="mx-5 sm:block hidden md:mr-10">
-                        <h2 className="text-xl lg:text-xl font-bold text-black-900 mb-3">Agora, cuidar da sua saúde ficou ainda mais fácil</h2>
-                        <p className="text-xl md:text-sm text-justify leading-7">
+                    <div className="md:mx-5 md:mr-10">
+                        <h2 className="text-xl sm:text-xl md:text-xl lg:text-xl xl:text-xl 2xl:text-xl font-bold text-black-900 mb-2 mt-2">Cuidar da sua saúde nunca foi tão fácil!</h2>
+                        <p className="text-sm sm:text-sm md:text-sm xl:text-sm 2xl:text-sm text-justify leading-7">
                             Com a telemedicina da Stixmed, você tem acesso a consultas de qualidade com especialistas, sem sair de casa. Nossa plataforma oferece um atendimento rápido e seguro, disponível 24h por dia, todos os dias, garantindo comodidade e cuidado quando você precisar.
                         </p>
-                        <p className="text-xl md:text-sm text-justify leading-7 mt-2">
+                        <p className="text-sm sm:text-sm md:text-sm xl:text-sm 2xl:text-sm text-justify leading-7 mt-2">
                             Sua consulta será realizada por um clínico geral ou pediatra, caso precise de atendimento imediato, garantindo que você receba a atenção necessária sempre que necessário. Nossa missão é proporcionar saúde com praticidade, confiança e excelência, para que você se sinta seguro e amparado em qualquer momento.
                         </p>
                     </div>
                 </div>
             </section>
             <section className="mb-0 pb-3 px-0 bg-[#25a096]">
-                <div className='container flex flex-col md:flex-row justify-between max-w-2xl py-4 md:py-3 gap-y-10 mx-auto'>
-                    <h2 className='text-3xl text-white m-auto'>Benefícios das consultas por vídeo no Stixmed</h2>
+                <div className='container flex flex-col md:flex-row justify-between max-w-2xl py-4 md:py-3 gap-y-5 mx-auto'>
+                    <h2 className='text-xl sm:text-xl md:text-2xl lg:text-3xl xl:text-3xl 2xl:text-3xl text-white m-auto mb-0'>Benefícios das consultas na Stixmed</h2>
                 </div>
-                <div className='container flex flex-wrap justify-center py-1 md:py-2 gap-y-2 gap-x-5 mx-auto'>
+                <div className="container flex flex-wrap justify-center py-1 md:py-2 gap-y-2 gap-x-5 mx-auto">
                     {vantagens.map((item, index) => (
-                        <div key={index} className="card p-2 w-full md:w-[180px] shadow-sm bg-transparent border-white border-2 rounded-3xl">
+                        <div key={index} className="card my-1 p-2 w-full sm:w-[200px] md:w-[180px] lg:w-[220px] shadow-sm bg-transparent border-white border-2 rounded-3xl">
                             <div className="card-body flex flex-col items-start gap-1 text-white">
                                 <div className="flex items-start w-full">
                                     <span className="text-xl">{item.icon}</span>
@@ -145,7 +136,7 @@ export default function Telemedicina() {
                     <h5 className="mb-2 text-xl sm:text-xl font-bold tracking-tight text-black-900">
                         Atendimento prático na palma da sua mão!
                     </h5>
-                    <p className="my-2 font-normal text-sm sm:text-sm text-black-500 leading-8 text-justify">
+                    <p className="my-2 font-normal text-sm sm:text-sm text-black-500 leading-6 text-justify">
                         Com a Conectivate, você tem acesso a um atendimento médico rápido e eficiente, podendo agendar consultas, receber prescrições e cuidar da sua saúde diretamente pelo aplicativo ou site. Oferecemos diversas especialidades, garantindo um atendimento seguro, personalizado e prático, para que você possa focar no que realmente importa. <strong>Baixe nosso app agora mesmo!</strong>
                     </p>
                     <div className="flex mt-0 items-center justify-start">
