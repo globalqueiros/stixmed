@@ -75,80 +75,78 @@ export default function Telemedicina() {
                 </div>
                 <div className="container flex flex-wrap justify-center py-1 md:py-2 gap-y-2 gap-x-5 mx-auto">
                     {vantagens.map((item, index) => (
-                        <div key={index} className="card my-1 p-2 w-full sm:w-[200px] md:w-[180px] lg:w-[220px] shadow-sm bg-transparent border-white border-2 rounded-3xl">
+                        <div key={index} className="card my-1 p-1 w-full sm:w-[200px] lg:w-[220px] md:grid-cols-2 shadow-sm bg-transparent border-white border-2 rounded-3xl">
                             <div className="card-body flex flex-col items-start gap-1 text-white">
                                 <div className="flex items-start w-full">
                                     <span className="text-xl">{item.icon}</span>
                                 </div>
-                                <p className='text-sm mt-2 text-justify text-white leading-5'>{item.description}</p>
+                                <p className='text-sm mt-2 text-justify text-white leading-6'>{item.description}</p>
                             </div>
                         </div>
                     ))}
                 </div>
             </section>
             <section className="bg-gray-200 mb-4">
-                <div className="container flex grid grid-cols-1 md:grid-cols-2 gap-4 py-4 text-center font-bold text-black">
-                    <div className="flex text-left flex-col space-y-1 text-6xl lg:text-8xl my-3">
-                        <h5 className='text-2xl mb-1'><strong>Fique atento às nossas</strong> dicas de utilização</h5>
-                        <p className='text-sm leading-5'>Selecionamos 6 dicas de boas práticas para que você possa se preparar para a consulta on-line com tranquilidade e utilizar a nossa Teleconsulta com segurança:</p>
+                <div className="container flex flex-col md:flex-row justify-between max-w-6xl py-3 md:py-3 gap-y-5 mx-auto text-center font-bold text-black">
+                    <div className="flex flex-col space-y-3 text-6xl lg:text-8xl mt-2 text-left">
+                        <h5 className='text-1xl sm:text-1xl md:text-2xl lg:text-2xl xl:text-2xl 2xl:text-2xl'><strong>Fique atento às nossas</strong> dicas de utilização</h5>
+                        <p className='text-sm sm:text-sm md:text-sm lg:text-sm lg:leading-6 xl:text-sm 2xl:text-sm leading-6 text-justify font-normal my-2'>Selecionamos 6 dicas de boas práticas para que você possa se preparar para a consulta on-line com tranquilidade e utilizar a nossa Teleconsulta com segurança:</p>
                     </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
-                        <div className="flex text-left flex-col space-y-1 text-4xl lg:text-6xl">
+                    <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-4 w-full md:ml-10 mb-3">
+                        <div className="flex flex-col space-y-3 text-4xl lg:text-6xl text-left">
                             <div>
                                 <FontAwesomeIcon icon={faTv} className="text-lg text-[#25a096] mb-1" />
-                                <p className='text-base'>Teste a conexão do seu dispositivo.</p>
+                                <p className='font-normal text-sm sm:text-sm md:text-sm lg:text-sm xl:text-sm 2xl:text-sm'>Teste a conexão do seu dispositivo.</p>
                             </div>
                             <div>
                                 <FontAwesomeIcon icon={faVolumeHigh} className="text-lg text-[#25a096] mb-1" />
-                                <p className='text-base'>Escolha um lugar silencioso, tranquilo e sem ruídos.</p>
+                                <p className='font-normal text-sm sm:text-sm md:text-sm lg:text-sm xl:text-sm 2xl:text-sm'>Escolha um lugar silencioso, tranquilo e sem ruídos.</p>
                             </div>
                             <div>
                                 <FontAwesomeIcon icon={faSignature} className="text-lg text-[#25a096] mb-1" />
-                                <p className='text-base'>Anote todas as perguntas que deseja fazer ao médico.</p>
+                                <p className='font-normal text-sm sm:text-sm md:text-sm lg:text-sm xl:text-sm 2xl:text-sm'>Anote todas as perguntas que deseja fazer ao médico.</p>
                             </div>
                         </div>
-                        <div className="flex text-left flex-col space-y-1 text-4xl lg:text-6xl">
+                        <div className="flex flex-col space-y-3 text-4xl lg:text-6xl text-left">
                             <div>
                                 <FontAwesomeIcon icon={faHeadset} className="text-lg text-[#25a096] mb-1" />
-                                <p className='text-base'>Dê preferência ao uso de fones de ouvido.</p>
+                                <p className='font-normal text-sm sm:text-sm md:text-sm lg:text-sm xl:text-sm 2xl:text-sm'>Dê preferência ao uso de fones de ouvido.</p>
                             </div>
                             <div>
                                 <FontAwesomeIcon icon={faClock} className="text-lg text-[#25a096] mb-1" />
-                                <p className='text-base'>Caso não possa comparecer à consulta, reagende ou cancele.</p>
+                                <p className='font-normal text-sm sm:text-sm md:text-sm lg:text-sm xl:text-sm 2xl:text-sm'>Caso não possa comparecer à consulta, reagende ou cancele.</p>
                             </div>
                             <div>
                                 <FontAwesomeIcon icon={faShirt} className="text-lg text-[#25a096] mb-1" />
-                                <p className='text-base'>Vista-se adequadamente.</p>
+                                <p className='font-normal text-sm sm:text-sm md:text-sm lg:text-sm xl:text-sm 2xl:text-sm'>Vista-se adequadamente.</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
-            <div className="max-w-5xl mb-3 pb-3 p-4 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 m-auto flex flex-col sm:flex-row items-center gap-4">
-                <Image
-                    src="/aplicativo.avif"
-                    width={250}
-                    height={250}
-                    className="rounded-full"
-                    alt="Médico Contratar"
-                />
-                <div className="text-left sm:text-left">
-                    <h5 className="mb-2 text-xl sm:text-xl font-bold tracking-tight text-black-900">
-                        Atendimento prático na palma da sua mão!
-                    </h5>
-                    <p className="my-2 font-normal text-sm sm:text-sm text-black-500 leading-6 text-justify">
-                        Com a Conectivate, você tem acesso a um atendimento médico rápido e eficiente, podendo agendar consultas, receber prescrições e cuidar da sua saúde diretamente pelo aplicativo ou site. Oferecemos diversas especialidades, garantindo um atendimento seguro, personalizado e prático, para que você possa focar no que realmente importa. <strong>Baixe nosso app agora mesmo!</strong>
-                    </p>
-                    <div className="flex mt-0 items-center justify-start">
-                        <a href="javascript:void(0)" target="_blank" rel="noopener noreferrer" className="mr-4">
-                            <img src="/google_play.png" alt="Baixar na Google Play" className="w-40 h-auto" />
-                        </a>
-                        <a href="javascript:void(0)" target="_blank" rel="noopener noreferrer">
-                            <img src="/apple_store.png" alt="Baixar na App Store" className="w-40 h-auto" />
-                        </a>
+            <section>
+                <div className="max-w-5xl mb-3 pb-3 p-4 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 m-auto flex flex-col sm:flex-row items-center gap-4">
+                    <Image
+                        src="/aplicativo.avif"
+                        width={250}
+                        height={250}
+                        className="rounded-full"
+                        alt="Médico Contratar"
+                    />
+                    <div className="text-left sm:text-left">
+                        <h5 className="text-lg text-center sm:text-lg md:text-1xl lg:text-1xl xl:text-1xl 2xl:text-1xl font-bold tracking-tight text-black-900">Atendimento prático na palma da sua mão!</h5>
+                        <p className="my-2.5 font-normal text-sm sm:text-sm md:text-sm md:leading-6 md:my-2 lg:text-sm lg:leading-6 xl:text-sm xl:leading-6 2xl:text-sm 2xl:leading-6 text-black-500 leading-6 text-justify">Com a Conectivate, você tem acesso a um atendimento médico rápido e eficiente, podendo agendar consultas, receber prescrições e cuidar da sua saúde diretamente pelo aplicativo ou site. Oferecemos diversas especialidades, garantindo um atendimento seguro, personalizado e prático, para que você possa focar no que realmente importa. <strong>Baixe nosso app agora mesmo!</strong></p>
+                        <div className="flex mt-0 items-center justify-start">
+                            <a href="javascript:void(0)" target="_blank" rel="noopener noreferrer" className="mr-4">
+                                <img src="/google_play.png" alt="Baixar na Google Play" className="w-40 h-auto" />
+                            </a>
+                            <a href="javascript:void(0)" target="_blank" rel="noopener noreferrer">
+                                <img src="/apple_store.png" alt="Baixar na App Store" className="w-40 h-auto" />
+                            </a>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </section>
         </>
     )
 }

@@ -19,7 +19,7 @@ export async function POST(req: Request) {
       from: `"${nome}" <${email}>`,
       to: 'corporationpagamentos@gmail.com',
       subject: `Formulario enviado pelo "${nome}"`,
-      text: `
+      html: `
         <p>Número do Protocolo: <strong>${protocolo}</strong></p>
         <h4>Detalhes Pessoais:</h4>
         <p><strong>Nome:</strong> ${nome}</p>

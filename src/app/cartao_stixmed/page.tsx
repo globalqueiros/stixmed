@@ -30,7 +30,7 @@ export default function CartaoStixmed() {
                 "Vídeo consulta com clínico geral 24hrs por dia",
                 "Sem limite de uso e sem carência",
                 "Atendimento em todo território Nacional",
-                "Seguro de vida (Porto Seguro)"
+                "Seguro (Allianz Seguros)"
             ],
             unavailableFeatures: [
             ],
@@ -45,7 +45,7 @@ export default function CartaoStixmed() {
                 "Sem limite de uso e sem carência",
                 "Atendimento em todo território Nacional",
                 "Atendimento com ambulância em caso de emergência e urgência",
-                "Seguro de vida (Porto Seguro)"
+                "Seguro (Allianz Seguros)"
             ],
             unavailableFeatures: [
             ],
@@ -85,7 +85,7 @@ export default function CartaoStixmed() {
                     </div>
                     <div className="flex flex-col items-start justify-start md:ml-10 mx-10 my-4 md:mt-0">
                         <h4 className="text-black text-justify font-bold text-lg md:text-xl leading-7 sm:text-lg lg:text-xl xl:text-2xl 2xl:text-xl">Mais de 70% dos casos são atendidos e resolvidos diretamente no local, sem necessidade de encaminhamento ao hospital.</h4>
-                        <p className="text-sm sm:text-sm md:text-sm lg:text-sm xl:text-sm 2xl:text-sm font-normal text-back mt-3 text-justify leading-8">Não é apenas uma remoção, é um serviço de salvamento de vidas em situações de emergência, com atendimento imediato no local em que você se encontra. Nossa equipe altamente treinada e qualificada presta cuidados especializados com ambulância, proporcionando um atendimento equivalente ao de um hospital móvel.</p>
+                        <p className="text-sm sm:text-sm md:text-sm lg:text-sm xl:text-sm 2xl:text-sm font-normal text-back mt-3 text-justify leading-7">Não é apenas uma remoção, é um serviço de salvamento de vidas em situações de emergência, com atendimento imediato no local em que você se encontra. Nossa equipe altamente treinada e qualificada presta cuidados especializados com ambulância, proporcionando um atendimento equivalente ao de um hospital móvel.</p>
                     </div>
                 </div>
             </section>

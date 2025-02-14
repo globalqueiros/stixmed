@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { faFacebook, faInstagram, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import Link from 'next/link';
 
 export default function Footer() {
@@ -31,6 +31,7 @@ export default function Footer() {
                                     href="https://www.instagram.com/stixmedsaude/"
                                     target="_blank"
                                     aria-label="Instagram"
+                                    className="bg-gray-500 p-2.5 rounded-full flex items-center justify-center transition hover:bg-[#10c4b5] duration-300"
                                 >
                                     <FontAwesomeIcon
                                         icon={faInstagram}
@@ -46,9 +47,26 @@ export default function Footer() {
                                     href="https://www.facebook.com/profile.php?id=61571851062262"
                                     target="_blank"
                                     aria-label="Facebook"
+                                    className="bg-gray-500 p-2.5 rounded-full flex items-center justify-center transition hover:bg-[#10c4b5] duration-300"
                                 >
                                     <FontAwesomeIcon
                                         icon={faFacebook}
+                                        style={{
+                                            width: "1.1rem",
+                                            color: "white",
+                                            cursor: "pointer",
+                                            height: "1.1rem",
+                                        }}
+                                    />
+                                </Link>
+                                <Link
+                                    href="https://wa.me/5511911075279?text=Ol%C3%A1!"
+                                    target="_blank"
+                                    aria-label="Whatsapp"
+                                    className="bg-gray-500 p-2.5 rounded-full flex items-center justify-center transition hover:bg-[#10c4b5] duration-300"
+                                >
+                                    <FontAwesomeIcon
+                                        icon={faWhatsapp}
                                         style={{
                                             width: "1.1rem",
                                             color: "white",
@@ -74,7 +92,7 @@ export default function Footer() {
                     <ul className='space-y-2 mb-2'>
                         <h5 className='text-white font-bold text-lg pb-1'>Stixmed</h5>
                         <li className="text-sm"><Link href='/contato'>Contato</Link></li>
-                        <li className="text-sm"><Link href='https://negociacao.stixmed.med.br'>Portal de Negociação</Link></li>
+                        <li className="text-sm"><Link href='https://paciente.stixmed.med.br/negociacao'>Portal de Negociação</Link></li>
                         <li className="text-sm"><Link href='https://career.groupqueiros.com/'>Trabalhe Conosco</Link></li>
                     </ul>
                 </div>

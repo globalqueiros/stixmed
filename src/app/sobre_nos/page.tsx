@@ -1,116 +1,194 @@
-import styles from './styles.module.css';
+"use client";
 import Image from 'next/image';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHandHoldingHeart, faHeart, faStethoscope, faUser, faFilePdf, faUsers, faUsersViewfinder } from "@fortawesome/free-solid-svg-icons";
+import { ReactElement } from 'react';
+import CountUp from "react-countup";
 
 interface CardProps {
     title: string;
     description: string;
-    image: string;
+    icone: ReactElement;
+}
+interface NumbData {
+    title: string;
+    number: string;
+    icone: ReactElement;
 }
 
 const cardData: CardProps[] = [
     {
-        title: "Médico",
-        description: "Contamos com equipe médica pronta 24 horas, preparada para atender você.",
-        image: "/medicoquem.png",
+        title: "Propósito",
+        description: "Proporcionar às pessoas um cuidado com a saúde de forma acessível, ágil, segura e simplificada, por meio de home care e telemedicina.",
+        icone: <FontAwesomeIcon icon={faHandHoldingHeart} />,
     },
     {
-        title: "Enfermeira",
-        description: "Serviços de enfermagem a domicílio pelo cartão Stixmed ou Home Care.",
-        image: "/enfermeira.png",
+        title: "Missão",
+        description: "Ser um sistema de saúde humanizado, proporcionando facilidade e acessibilidade para que as pessoas possam cuidar da sua saúde em qualquer lugar do Brasil.",
+        icone: <FontAwesomeIcon icon={faHeart} />,
     },
     {
-        title: "Fisioterapia",
-        description: "Contamos com profissionais fisioterapeutas que atendem em domicílio Home Care.",
-        image: "/fisioterapia.png",
+        title: "Valor",
+        description: "Comprometimento com a ética profissional, uma equipe médica altamente qualificada, transparência, acessibilidade e eficiência no atendimento.",
+        icone: < FontAwesomeIcon icon={faStethoscope} />,
     },
     {
-        title: "Cuidando",
-        description: "Cuidamos de você em todas as etapas da vida, proporcionando dignidade a todos.",
-        image: "/apertodemao.png",
+        title: "Visão",
+        description: "Ser reconhecido como um serviço de excelência, proporcionando acesso facilitado à saúde de qualidade por meio de home care e telemedicina, com valores acessíveis.",
+        icone: <FontAwesomeIcon icon={faUsersViewfinder} />,
+    }
+];
+
+const numbData: NumbData[] = [
+    {
+        title: "Colaborador",
+        number: "0",
+        icone: <FontAwesomeIcon icon={faStethoscope} />,
     },
     {
-        title: "Atendimento Ágil",
-        description: "Respeitamos o tempo do paciente, garantindo um atendimento ágil e eficiente.",
-        image: "/atendimento.png",
+        title: "Pacientes",
+        number: "0",
+        icone: <FontAwesomeIcon icon={faUsers} />,
     },
     {
-        title: "Pessoas",
-        description: "Comprometidos em servir com humanismo, garantindo o melhor atendimento para o paciente.",
-        image: "/pessoas.png",
+        title: "Exames",
+        number: "0",
+        icone: <FontAwesomeIcon icon={faFilePdf} />,
     }
 ];
 
 export default function SobreNos() {
     return (
         <>
-            <section className='bg-[linear-gradient(287.38deg,_#06786f_0%,_#25a096_100%)]'>
-                <div className="container flex flex-col md:flex-row justify-between sm:max-w-8xl md:mr-10 lg:mr-0 xl:mr-0 2xl:max-w-6xl py-2 md:py-3 gap-y-10 mx-auto">
-                    <h4>A Stixmed foi criada para oferecer suporte no cuidado com a sua saúde de forma ágil, segura e simplificada.</h4>
+            <section className="py-6 flex justify-center">
+                <div className="container mx-auto flex flex-col gap-6 px-6 sm:px-8 lg:px-10 max-w-7xl">
+                    <div className="flex flex-col md:flex-row items-center gap-6">
+                        <div className="flex justify-center md:w-1/2">
+                            <Image
+                                src="/filho_andando_bike.webp"
+                                width={1000}
+                                height={1000}
+                                className="rounded-full drop-shadow-md img-thumbnail shadow-lg w-56 h-56 md:w-72 md:h-72"
+                                alt="Médico"
+                            />
+                        </div>
+                        <div className="md:w-1/2 md:text-left xl:p-5 2xl:p-5">
+                            <h2 className="font-bold text-2xl text-black pb-2">Sobre Nós</h2>
+                            <p className="text-sm text-justify leading-relaxed max-w-6xl">
+                                Fundada em 2024, a <strong>Stixmed</strong> é uma empresa inovadora no setor de saúde, comprometida em oferecer soluções acessíveis e eficientes. Com um atendimento humanizado e o uso de tecnologia avançada, proporcionamos segurança, agilidade e qualidade de vida aos nossos pacientes. Além disso, nosso Serviço de Orientação ao Paciente está sempre disponível para suporte personalizado, garantindo um atendimento diferenciado, transparente e confiável.
+                            </p>
+                            <p className="text-sm text-justify mt-2 leading-relaxed max-w-6xl">
+                                Nosso compromisso com a inovação nos permite aprimorar a experiência na saúde brasileira, proporcionando um serviço seguro e acessível. Além disso, contamos com um Serviço de Orientação ao Paciente sempre disponível para suporte personalizado, garantindo um atendimento ágil, confiável e de alta qualidade.
+                            </p>
+                        </div>
+                    </div>
+                    <section className='bg-[url(/fundo_hospital.webp)] bg-cover bg-center bg-no-repeat relative py-4 rounded-xl'>
+                        <div className="absolute inset-0 bg-black opacity-50 rounded-xl"></div>
+                        <div className="relative z-10 text-white flex flex-col w-full max-w-7xl py-2 gap-y-5 m-auto">
+                            <h2 className="text-xl sm:text-xl md:text-2xl lg:text-2xl xl:text-2xl 2xl:text-2xl font-semibold text-left ml-5 mb-3">Confira Nossos Números e Impacto</h2>
+                            <div className="grid grid-cols-1 gap-7 px-4 pb-0 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 justify-center">
+                                {numbData.map((numb, index) => (
+                                    <div
+                                        key={index}
+                                        className="flex flex-col items-start p-4 border-2 shadow-md rounded-lg justify-center items-center place-items-center"
+                                    >
+                                        <h3 className="text-xl sm:text-xl md:text-xl lg:text-xl xl:text-xl 2xl:text-xl font-bold w-full mb-2 text-center">
+                                            <CountUp start={0} end={Number(numb.number)} duration={2.5} separator="," /> <span>{numb.title}</span>
+                                        </h3>
+                                        <div>
+                                            <p className="text-[#25a096] text-3xl mb-2">{numb.icone}</p>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </section>
+                    <div className="flex flex-col md:flex-row-reverse items-center gap-6">
+                        <div className="flex justify-center md:w-1/2">
+                            <Image
+                                src="/correndo.webp"
+                                width={1000}
+                                height={1000}
+                                className="rounded-full drop-shadow-md img-thumbnail shadow-lg w-56 h-56 md:w-72 md:h-72"
+                                alt="Serviços"
+                            />
+                        </div>
+                        <div className="md:w-1/2 text-end md:text-left">
+                            <h2 className="font-bold text-2xl text-black pb-2">Inovações Tecnológicas</h2>
+                            <p className="text-sm text-justify leading-relaxed max-w-6xl">
+                                A tecnologia é a nossa aliada para transformar a experiência na área da saúde. Investimos continuamente em soluções inovadoras que garantem mais eficiência, acessibilidade e segurança para nossos pacientes. Buscamos sempre oferecer inovação de ponta aliada à acessibilidade, proporcionando um ambiente digital e presencial intuitivo. Dessa forma, nossos pacientes podem gerenciar seus dados, acessar faturas e realizar consultas online, obtendo informações de maneira prática e segura.
+                            </p>
+                            <p className="text-sm text-justify mt-2 leading-relaxed max-w-6xl">
+                                Nossa equipe está disponível 24 horas por dia, 7 dias por semana, para esclarecer dúvidas e fornecer suporte personalizado, garantindo um atendimento de qualidade, ágil e confiável. Comprometida com a transparência, aprimoramos continuamente nossas soluções para oferecer mais segurança, qualidade e acessibilidade aos pacientes.
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </section>
-            <div className="container flex flex-col md:flex-row justify-between sm:max-w-8xl md:mr-10 lg:mr-0 xl:mr-0 2xl:max-w-6xl py-4 md:py-3 gap-y-10 mx-auto">
-                <div className="mx-10 md:mx-0">
-                    <Image
-                        src="/sobrenos.png"
-                        width={1000}
-                        height={1000}
-                        className="rounded-full shadow-lg"
-                        alt="Médico"
-                    />
+            <section className='bg-gray-200 py-4'>
+                <div className="flex flex-col w-full max-w-7xl py-2 gap-y-5 m-auto">
+                    <h2 className="text-3xl font-semibold text-left ml-5 mb-3">Nossos pilares</h2>
+                    <div className="grid grid-cols-1 gap-7 px-4 pb-0 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+                        {cardData.map((card, index) => (
+                            <div
+                                key={index}
+                                className="flex flex-col items-start p-4 shadow-md rounded-lg bg-white"
+                            >
+                                <div>
+                                    <p className="text-[#25a096] text-3xl mb-2">{card.icone}</p>
+                                </div>
+                                <h3 className="text-lg font-bold text-black w-full mb-2">{card.title}</h3>
+                                <p className="mt-0 text-sm text-justify text-black leading-6">{card.description}</p>
+                            </div>
+                        ))}
+                    </div>
                 </div>
-                <div className="sm:mx-3 md:mx-5 lg:mx-5 xl:mx-5 2xl:mx-10 mr-10">
-                    <h2 className="font-bold text-black pb-2">Sobre Nós</h2>
-                    <p className='text-sm text-justify leading-6'>
-                        Lançada em 2024 pela Corporação Queirós Brazil, em São Paulo, a Stixmed nasceu com a missão de cuidar das pessoas, garantindo agilidade no atendimento e oferecendo serviços de alta qualidade a preços mais acessíveis.
-                    </p>
-                    <p className='text-sm text-justify mt-2 leading-6'>
-                        Pensando na eficiência no atendimento clínico e no conforto dos pacientes, também disponibilizamos serviços de home care. Nossa atuação é guiada pelos pilares de agilidade, humanização e excelência, com foco no socorro rápido, onde cada minuto conta. Para isso, contamos com uma equipe médica preparada para atuar 24 horas por dia, composta por médicos, enfermeiros(as) e fisioterapeutas, comprometidos em oferecer um atendimento ágil, eficiente e humanizado.
-                    </p>
-                </div>
-            </div>
-            <div className="flex flex-col w-full max-w-7xl py-2 gap-y-5 m-auto">
-                <h2 className="text-xl text-center font-semibold">
-                    Somos uma clínica virtual e home care com médicos disponíveis
-                    <span className={styles.breakline}> 24 horas </span>
-                    para atender você e sua família online.
-                </h2>
-                <div className="grid grid-cols-1 gap-7 px-4 pb-4 md:grid-cols-2 lg:grid-cols-3">
-                    {cardData.map((card, index) => (
-                        <div
-                            key={index}
-                            className="flex flex-col items-center p-4 shadow-md rounded-lg"
-                            style={{ background: '#10c4b5' }}
-                        >
+            </section>
+            <section className="py-6 flex justify-center">
+                <div className="container mx-auto flex flex-col gap-6 px-6 sm:px-8 lg:px-10 max-w-7xl">
+                    <div className="flex flex-col md:flex-row items-center gap-6">
+                        <div className="flex justify-center md:w-1/2">
                             <Image
-                                src={card.image}
-                                width={60}
-                                height={60}
-                                alt={card.title}
-                                className="rounded-lg pb-2"
+                                src="/medico_familia.webp"
+                                width={1000}
+                                height={1000}
+                                className="rounded-full drop-shadow-md img-thumbnail shadow-lg w-56 h-56 md:w-72 md:h-72"
+                                alt="Médico"
                             />
-                            <h3 className="mt-2 text-lg font-bold text-left text-white">{card.title}</h3>
-                            <p className="mt-1 text-sm text-justify text-white">{card.description}</p>
                         </div>
-                    ))}
+                        <div className="md:w-1/2 md:text-left xl:p-5 2xl:p-5">
+                            <h2 className="font-bold text-2xl text-black pb-2">Cuidando do Seu Bem-Estar</h2>
+                            <p className="text-sm text-justify mt-2 leading-relaxed max-w-6xl">
+                                Colocamos o seu bem-estar em primeiro lugar. Nossa missão é proporcionar atendimento humanizado, acessível e eficiente, garantindo que cada paciente receba o suporte necessário com qualidade e segurança. Investimos em tecnologia e inovação para tornar sua experiência na área da saúde mais intuitiva e prática, permitindo o acesso fácil a serviços médicos e informações essenciais. Estamos comprometidos em oferecer um atendimento ágil e personalizado, assegurando que você tenha o cuidado que merece em todos os momentos.
+                            </p>
+                            <p className="text-sm text-justify mt-2 leading-relaxed max-w-6xl">
+                                Cuidamos da sua saúde com inovação, segurança e um atendimento humanizado, garantindo qualidade e acessibilidade.
+                            </p>
+                        </div>
+                    </div>
+                    <div className="flex flex-col md:flex-row-reverse items-center gap-6 rounded-lg shadow">
+                        <div className="flex justify-center md:w-1/2">
+                            <Image
+                                src="/contratar.png"
+                                width={300}
+                                height={300}
+                                className="rounded-full"
+                                alt="Médico Contratar"
+                            />
+                        </div>
+                        <div className="md:w-1/2 text-end md:text-left p-4">
+                            <h2 className="font-bold text-2xl text-black pb-2">Por que a Stixmed?</h2>
+                            <p className="text-sm text-justify mt-2 leading-relaxed">
+                                Valorizamos a excelência em qualidade, segurança e acessibilidade na área da saúde.
+                                Oferecemos um atendimento humanizado, suporte ininterrupto 24 horas por dia, 7 dias por semana,
+                                e um ambiente digital intuitivo, proporcionando aos pacientes a facilidade de agendar consultas,
+                                acessar informações e receber acompanhamento personalizado. Com transparência e inovação contínua,
+                                garantimos um serviço ágil, confiável e comprometido com o bem-estar de cada paciente.
+                            </p>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div className="max-w-4xl mb-4 p-4 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 m-auto flex flex-col sm:flex-row items-center gap-4">
-                <Image
-                    src="/contratar.png"
-                    width={300}
-                    height={300}
-                    className="rounded-full"
-                    alt="Médico Contratar"
-                />
-                <div>
-                    <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900">
-                        Por que a Stixmed?
-                    </h5>
-                    <p className="mb-3 font-normal text-sm text-justify text-gray-700 leading-6">
-                        A Stixmed, a melhor opção para cuidados médicos 24 horas. Nossa equipe está pronta para oferecer atendimento ágil e especializado, lidando com qualquer emergência. Contamos com serviços de home care e a conveniência do cartão Stixmed, garantindo sempre o melhor atendimento para o paciente.
-                    </p>
-                </div>
-            </div>
+            </section>
         </>
     );
 }

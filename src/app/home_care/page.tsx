@@ -27,8 +27,8 @@ export default function Planos() {
                 "Remoção do Paciente",
                 "Equipe Multidisciplinar",
                 "Atendimento com ambulância em emergências e urgências",
-                "Seguro de vida (Porto Seguro)",
                 "Atendimento em todo território Nacional",
+                "Seguro (Allianz Seguros)",
             ],
         },
         {
@@ -40,8 +40,8 @@ export default function Planos() {
                 "Equipe Multidisciplinar",
                 "Administração de medicamentos",
                 "Atendimento com ambulância em emergências e urgências",
-                "Seguro de vida (Porto Seguro)",
                 "Atendimento em todo território Nacional",
+                "Seguro (Allianz Seguros)",
             ],
         },
     ];
@@ -82,7 +82,7 @@ export default function Planos() {
                 <ul className="list-disc list-inside text-sm text-white space-y-2 font-semibold">
                     <li>Equipe multidisciplinar</li>
                     <li>Administração de medicamentos</li>
-                    <li>Seguro de vida (Porto Seguro)</li>
+                    <li>Seguro (Allianz Seguros)</li>
                     <li>Atendimento com ambulância</li>
                     <li>Atendimento em todo território Nacional</li>
                 </ul>
