@@ -40,17 +40,17 @@ export default function Home() {
     <>
       <section className="py-3 sm:mt-3 md:mt-3">
         <div className="flex md:flex-row flex-col justify-around items-center max-w-7xl m-auto">
-          <div className="flex flex-col items-start justify-start md:ml-20 mx-10 mt-10 md:mt-0">
-            <p className="text-black font-semibold pb-2">Clinica Online e Home Care</p>
+          <div className="flex flex-col items-start justify-start md:ml-20 mx-10 sm:mt-10 md:mt-0">
+            <p className="text-black font-semibold pb-2 mt-2">Clinica Online e Home Care</p>
             <motion.h3
-              className="font-bold md:text-3xl text-3xl text-black"
+              className="font-bold text-xl sm:text-3xl md:text-3xl text-3xl text-black"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 2, ease: "easeOut" }}
             >
               Cuide da sua saúde com consultas ilimitadas e acessíveis para você e sua família.
             </motion.h3>
-            <p className="md:text-sm text-sm font-normal text-back mt-3 text-justify">
+            <p className="text-sm sm:text-sm md:text-sm text-sm font-normal text-back my-2 text-justify">
               Atendimento ilimitado de telemedicina e home care com uma equipe médica altamente qualificada, oferecendo assistência especializada a qualquer momento, de forma prática e acessível.
             </p>
             <motion.h3
@@ -59,9 +59,9 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 2, ease: "easeOut" }}
             >
-              <div className="pt-3 space-y-1">
-                <h3 className="text-sm font-semibold">Telefones de Urgência e Emergência
-                  <Link className="ml-3 text-black text-base" href="tel:+08000000000">
+              <div className="pt-2 space-y-1">
+                <h3 className="leading-6 text-base sm:text-base md:text-sm font-semibold">Telefones de Urgência e Emergência
+                  <Link className="ml-3 text-black text-base md:text-base" href="tel:+08000000000">
                     <FontAwesomeIcon icon={faPhone} /> 0800 000 0000
                   </Link>
                 </h3>
@@ -80,18 +80,16 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="bg-[#10c4b5]">
+      <section className="bg-[#10c4b5] xl:mt-3">
         <div className="flex justify-center items-center flex-col py-3 text-center font-bold lg:text-8xl text-6xl space-y-1 text-white">
-          <h4 className="pb-1 leading-7">
-            Garanta seu Cartão Stixmed com planos a partir de <strong style={{ color: 'white' }}>R$ 58,99/mês</strong>.
-            <br /> Cuide da sua saúde com qualidade e economia!
+          <h4 className="text-sm sm:text-sm md:text-xl pb-1 leading-6">Garanta seu Cartão Stixmed com planos a partir de <strong className="text-white">R$ 58,99/mês</strong>. Cuide da sua saúde com qualidade e economia!
           </h4>
         </div>
       </section>
       <section className="py-6 flex justify-center">
         <div className="container mx-auto flex flex-col gap-6 px-6 sm:px-8 lg:px-10 max-w-7xl">
           <div className="flex flex-col md:flex-row items-center gap-6">
-            <div className="flex justify-center w-full lg:w-3/4 xl:w-full">
+            <div className="mr-20 hidden md:hidden lg:block">
               <Image
                 src="/evolucao.png"
                 width={1800}
@@ -101,11 +99,13 @@ export default function Home() {
               />
             </div>
             <div className="xl:p-5 2xl:p-5">
-              <h2 className="font-bold text-2xl text-black pb-2">Inovando Junto com a Medicina</h2>
-              <p className="text-sm text-justify leading-relaxed">
+              <h2 className="font-bold text-2xl sm:text-2xl md:text-2xl text-black pb-2">
+                Inovando Junto com a Medicina
+              </h2>
+              <p className="text-sm sm:text-sm md:text-sm text-justify leading-6">
                 A medicina está em constante evolução, trazendo novas formas de tratamento que melhoram a precisão dos diagnósticos e a eficácia das terapias. Na Stixmed, utilizamos inovações como inteligência artificial e terapias personalizadas para oferecer cuidados mais assertivos e humanizados. A telemedicina amplia o acesso a consultas e acompanhamentos, tornando o atendimento mais ágil e acessível.
               </p>
-              <p className="text-sm text-justify mt-2 leading-relaxed">
+              <p className="text-sm sm:text-sm md:text-sm text-justify mt-2 leading-6">
                 Nosso compromisso é impulsionar essa evolução, desenvolvendo soluções que tornem os tratamentos mais acessíveis, eficazes e centrados no paciente. Acreditamos que, ao inovar constantemente, podemos construir um futuro onde a medicina atenda cada vez melhor às necessidades da sociedade, promovendo saúde, bem-estar e qualidade de vida para todos.
               </p>
             </div>
@@ -114,7 +114,7 @@ export default function Home() {
       </section>
       <section className="bg-[#10c4b5] text-white py-8 px-4">
         <div className="container mx-auto flex flex-col md:flex-row items-center">
-          <div className="md:w-1/2 px-6">
+          <div className="px-4">
             <h2 className="text-base text-white-300 mb-2">Home Care</h2>
             <h1 className="text-xl font-bold text-justify leading-7 mb-4">
               Conte com nossa equipe especializada para oferecer atendimento humanizado e de excelência, levando cuidados até você no conforto do seu lar.
@@ -141,7 +141,7 @@ export default function Home() {
               </Link>
             </div>
           </div>
-          <div className="md:w-1/2 flex justify-center">
+          <div className="mr-20 hidden md:hidden xl:block">
             <Image
               width={1000}
               height={1000}
@@ -155,7 +155,7 @@ export default function Home() {
       <section className="py-4 flex justify-center">
         <div className="container mx-auto flex flex-col gap-6 px-6 sm:px-8 lg:px-10 max-w-7xl">
           <div className="flex flex-col md:flex-row-reverse items-center gap-6">
-            <div className="mr-20 md:block hidden">
+            <div className="mr-20 hidden md:hidden lg:block">
               <Image
                 src="/card.png"
                 width={1500}
@@ -165,13 +165,13 @@ export default function Home() {
                 alt="Cartão Stixmed"
               />
             </div>
-            <div className="md:w-1/2 text-star md:text-left">
-              <h2 className="font-bold text-2xl text-black pb-2">Cartão Stixmed</h2>
-              <p className="text-sm text-justify leading-relaxed max-w-6xl mb-4">
+            <div className="md:w-full text-star md:text-left">
+              <h2 className="font-bold text-2xl sm:text-2xl text-black pb-2">Cartão Stixmed</h2>
+              <p className="text-sm sm:text-sm text-justify leading-relaxed max-w-6xl mb-4">
                 O cartão Stixmed oferece consultas 24 horas, com um custo mais acessível do que os planos convencionais. Além disso, você tem acesso à telemedicina ilimitada, garantindo praticidade e cuidado sempre que precisar. Pensado para atender a você e sua família, nosso plano proporciona um atendimento contínuo e de qualidade, sem a necessidade de sair de casa.
               </p>
               <Link
-                href='/cartao_stixmed#planos'
+                href="/cartao_stixmed#planos"
                 className="m-auto text-sm text-white font-semibold rounded-full px-5 py-2.5 bg-[#10c4b5]"
               >
                 Veja os Planos
