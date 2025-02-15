@@ -42,41 +42,29 @@ const Navbar = () => {
                             </Link>
                         </div>
                     </div>
-                    <div className="hidden md:block">
+                    <div className="hidden md:hidden lg:block">
                         <div className="ml-2 flex items-center space-x-2">
                             <Link href="/sobre_nos" className="text-white p-2">Sobre Nós</Link>
                             <Link href="/telemedicina" className="text-white p-2">Telemedicina</Link>
                             <Link href="/cartao_stixmed" className="text-white p-2">Cartão Stixmed</Link>
                             <Link href="/home_care" className="text-white p-2">Home Care</Link>
                             <Link href="/contato" className="text-white p-2">Contato</Link>
-                            <Link href="https://paciente.stixmed.med.br" className="border rounded-full text-white flex btn text-sm"><div className='pl-3 pr-3'><FontAwesomeIcon icon={faUser} className="mr-2 mt-1" /> Acessar</div></Link>
+                            <Link href="https://paciente.stixmed.med.br" className="border rounded-full text-white flex btn text-sm">
+                                <div className='pl-3 pr-3'>
+                                    <FontAwesomeIcon icon={faUser} className="mr-2 mt-1" /> Acessar
+                                </div>
+                            </Link>
                         </div>
                     </div>
-                    <div className="md:hidden flex items-center">
-                        <button className="inline-flex items-center justify-center p-2 rounded-md text-white md:text-white hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" onClick={toggleNavbar}>
+                    <div className="md:flex lg:hidden items-center">
+                        <button className="inline-flex items-center justify-center p-2 rounded-md text-white hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" onClick={toggleNavbar}>
                             {isClick ? (
-                                <svg className="h-6 w-6"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    stroke="currentColor">
-                                    <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth={2}
-                                        d="M6 18L18 6M6 6l12 12" />
+                                <svg className="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                                 </svg>
                             ) : (
-                                <svg className="h-6 w-6"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    stroke="currentColor">
-                                    <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth={2}
-                                        d="M4 6h16M4 12h16m-7 6h7" />
+                                <svg className="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
                                 </svg>
                             )}
                         </button>
@@ -84,14 +72,16 @@ const Navbar = () => {
                 </div>
             </div>
             {isClick && (
-                <div className="md:hidden">
+                <div className="md:block lg:hidden lg:block">
                     <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                         <Link href="/sobre_nos" className="text-white flex p-2">Sobre Nós</Link>
                         <Link href="/telemedicina" className="text-white flex p-2">Telemedicina</Link>
                         <Link href="/cartao_stixmed" className="text-white flex p-2">Cartão Stixmed</Link>
                         <Link href="/home_care" className="text-white flex p-2">Home Care</Link>
                         <Link href="/contato" className="text-white flex p-2">Contato</Link>
-                        <Link href="https://paciente.stixmed.med.br" className="border rounded-full text-white flex btn text-base pl-4 pr-4"><FontAwesomeIcon icon={faUser} className="mr-2 mt-1" /> Acessar</Link>
+                        <Link href="https://paciente.stixmed.med.br" className="border rounded-full text-white flex btn text-base pl-4 pr-4">
+                            <FontAwesomeIcon icon={faUser} className="mr-2 mt-1" /> Acessar
+                        </Link>
                     </div>
                 </div>
             )}
