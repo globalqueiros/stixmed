@@ -1,7 +1,7 @@
 "use client";
 import Image from 'next/image';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHandHoldingHeart, faHeart, faStethoscope, faUser, faFilePdf, faUsers, faUsersViewfinder } from "@fortawesome/free-solid-svg-icons";
+import { faHandHoldingHeart, faHeart, faStethoscope, faFilePdf, faUsers, faUsersViewfinder } from "@fortawesome/free-solid-svg-icons";
 import { ReactElement } from 'react';
 import CountUp from "react-countup";
 

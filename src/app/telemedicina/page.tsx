@@ -138,10 +138,20 @@ export default function Telemedicina() {
                         <p className="my-2.5 font-normal text-sm sm:text-sm md:text-sm md:leading-6 md:my-2 lg:text-sm lg:leading-6 xl:text-sm xl:leading-6 2xl:text-sm 2xl:leading-6 text-black-500 leading-6 text-justify">Com a Conectivate, você tem acesso a um atendimento médico rápido e eficiente, podendo agendar consultas, receber prescrições e cuidar da sua saúde diretamente pelo aplicativo ou site. Oferecemos diversas especialidades, garantindo um atendimento seguro, personalizado e prático, para que você possa focar no que realmente importa. <strong>Baixe nosso app agora mesmo!</strong></p>
                         <div className="flex mt-0 items-center justify-start">
                             <a href="javascript:void(0)" target="_blank" rel="noopener noreferrer" className="mr-4">
-                                <img src="/google_play.png" alt="Baixar na Google Play" className="w-40 h-auto" />
+                                <Image 
+                                width={250}
+                                height={250}
+                                src="/google_play.png"
+                                alt="Baixar na Google Play" 
+                                className="w-40 h-auto" />
                             </a>
                             <a href="javascript:void(0)" target="_blank" rel="noopener noreferrer">
-                                <img src="/apple_store.png" alt="Baixar na App Store" className="w-40 h-auto" />
+                                <Image 
+                                width={250}
+                                height={250}
+                                src="/apple_store.png"
+                                alt="Baixar na App Store"
+                                className="w-40 h-auto" />
                             </a>
                         </div>
                     </div>
